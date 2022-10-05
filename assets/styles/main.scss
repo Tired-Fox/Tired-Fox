@@ -1,0 +1,110 @@
+* {
+    @apply scroll-m-20;
+}
+  
+html {
+    @apply scroll-smooth;
+}
+
+a {
+    @apply underline
+}
+
+p {
+    span.math.math-inline {
+        display: inline-block;
+    }
+}
+
+.code-block {
+    &:hover {
+        .code-filename {
+            @apply opacity-0;
+        }
+    }
+
+    .code-filename {
+        @apply opacity-100 transition-opacity;
+    }
+}
+
+a.data-footnote-backref {
+    text-decoration: none !important;
+}
+
+div.math.math-display {
+    .MathJax {
+        svg {
+            margin-inline: auto;
+        }
+    }
+}
+
+blockquote {
+    p {
+        &::before {
+            display: none;
+        }
+        &::after {
+            display: none;
+        }
+    }
+}
+
+section.footnotes {
+    @apply border-t border-solid border-zinc-700 mt-10;
+}
+
+sup {
+    @apply ml-1
+}
+
+th {
+    color: white !important;
+}
+
+mark {
+    display: inline-block;
+    line-height: 0em;
+    padding-bottom: 0.5em;
+    background-color: rgba(255, 255, 0, .6);
+}
+
+kbd {
+    kbd {
+        background-color: #eee;
+        border-radius: 3px;
+        border: 1px solid #b4b4b4;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+        color: #333;
+        display: inline-block;
+        padding: 0 8px;
+        white-space: nowrap;
+        @apply mx-1 text-sm;
+    }
+}
+  
+.cta {
+    @apply p-1.5 px-2 bg-slate-50 border border-slate-200 font-semibold rounded-lg;
+    @apply transition-all hover:-translate-y-0.5 focus:bg-slate-100 active:translate-y-0.5 active:shadow-inner;
+}
+  
+.cta.w-icon {
+    @apply flex items-center gap-2 pr-3;
+}
+
+.task-list-item {
+    input {
+        @apply mr-2;
+    }
+}
+
+code {
+    &::before {
+        display: none;
+    }
+
+    &::after {
+        display: none;
+    }
+}
