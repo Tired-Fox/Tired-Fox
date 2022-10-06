@@ -2,10 +2,10 @@
   import { getIcons, getTitle, getType } from '@/logic/Callouts';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-  defineProps({
+  const props = defineProps({
     toggle: {
       type: Boolean,
-      default: null
+      default: false
     },
     open: {
       type: Boolean,
@@ -20,47 +20,72 @@
       default: 'info',
     },
   })
-</script>
 
+  
+  const expand = ref(props.open);
+
+  const toggleCollapse = () => {
+    console.log("Toggle Collapse");
+  }
+</script>
 
 <template>
   <!-- Collapsable  -->
-  <div v-if="toggle" class="callout my-4" :class="[getType(type)]">
-    <details :open="open">
-      <summary class="callout-head flex items-center gap-4 not-prose">
-        <CalloutHead 
-          :toggle="toggle"
-          :type="getType(type)"
-          :icon="getIcons(type)" 
-          :title="title ? title : getTitle(type)"
-        />
-      </summary>
+  <ClientOnly aria-placeholder="Loading...">
+    <div v-if="toggle" class="callout my-4" :class="[getType(type)]">
+      <div 
+        class="callout-head flex items-center gap-4 not-prose cursor-pointer"
+        @click="expand = !expand"  
+      >
+          <!-- <CalloutHead 
+            :type="getType(type)"
+            :icon="getIcons(type)" 
+            :title="title ? title : getTitle(type)"
+          /> -->
+          <FontAwesomeIcon :icon="getIcons(type)" class="callout-icon text-xl w-[1.25rem]" :class="[type]" />
+          <p>
+            <strong class="font-bold">
+              {{ title ? title : getTitle(type) }}
+            </strong>
+          </p>
+          <FontAwesomeIcon
+            class="ml-auto transition-transform duration-300 callout-toggle-icon"
+            :icon="['fas', 'caret-left']"
+            :class="{'rotate-icon': expand}"
+          />
+        </div>
+        <div 
+          class="prose mx-auto h-0 overflow-hidden"
+          :class="{'expand': expand}"
+        >
+          <ContentSlot :use="$slots.default" unwrap="p" />
+        </div>
+    </div>
+
+    <!-- Always expanded -->
+    <div v-else class="callout my-4" :class="[getType(type)]">
+      <div class="callout-head flex items-center gap-4 m-0 p-0 not-prose">
+        <FontAwesomeIcon :icon="getIcons(type)" class="callout-icon text-xl w-[1.25rem]" :class="[type]" />
+        <p><strong class="font-bold">{{title ? title : getTitle(type)}}</strong></p>
+      </div>
       <div class="p-3 prose mx-auto">
         <ContentSlot :use="$slots.default" unwrap="p" />
       </div>
-    </details>
-  </div>
+    </div>  
 
-  <!-- Always expanded -->
-  <div v-else class="callout my-4" :class="[getType(type)]">
-    <div class="callout-head flex items-center gap-4 m-0 p-0 not-prose">
-      <CalloutHead 
-        :toggle="toggle"
-        :type="getType(type)"
-        :icon="getIcons(type)" 
-        :title="title ? title : getTitle(type)"
-      />
-    </div>
-    <div class="p-3 prose mx-auto">
-      <ContentSlot :use="$slots.default" unwrap="p" />
-    </div>
-  </div>
+    <template #placeholder>
+      <p>Loading...</p>
+    </template>
+  </ClientOnly>
 </template>
 
 <style scoped lang="scss">
+  .rotate-icon {
+    @apply -rotate-90;
+  }
 
-  details summary::-webkit-details-marker {
-    display:none;
+  .expand {
+    @apply h-fit p-3;
   }
 
   .callout {
@@ -146,6 +171,43 @@
       .callout-head {
         @apply bg-[#64DD17]/10;
       }
+    }
+  }
+
+  .callout-icon {
+    &.note {
+      @apply text-[#448AFF];
+    }
+    &.info {
+      @apply text-[#00B8D4];
+    }
+    &.tip {
+      @apply text-[#00BFA5];
+    }
+    &.failure {
+      @apply text-[#FF5252];
+    }
+
+    &.success {
+      @apply text-[#03BF52];
+    }
+    &.warning {
+      @apply text-[#FF9100];
+    }
+    &.danger {
+      @apply text-[#FF1744];
+    }
+    &.bug {
+      @apply text-[#F50057];
+    }
+    &.example {
+      @apply text-[#7C4DFF];
+    }
+    &.quote {
+      @apply text-[#9E9E9E];
+    }
+    &.question {
+      @apply text-[#64DD17];
     }
   }
 </style>

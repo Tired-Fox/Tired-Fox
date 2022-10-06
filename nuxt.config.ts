@@ -46,5 +46,10 @@ export default defineNuxtConfig({
         ],
         rehypePlugins: ['rehype-mathjax'],
     }
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: tag => ['g', 'use', 'path', 'rect', 'mjx-container'].includes(tag)
+    }
   }
 })
