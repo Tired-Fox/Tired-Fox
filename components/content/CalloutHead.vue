@@ -2,6 +2,10 @@
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
   defineProps({
+    toggle: {
+      type: Boolean,
+      required: true,
+    },
     type: {
       type: String,
       required: true,
@@ -20,9 +24,20 @@
 <template>
   <FontAwesomeIcon :icon="icon" class="callout-icon text-xl w-[1.25rem]" :class="[type]" />
   <p><strong class="font-bold">{{title}}</strong></p>
+  <FontAwesomeIcon 
+    v-if="toggle !== null"
+    class="ml-auto transition-transform duration-300 callout-toggle-icon"
+    :icon="['fas', 'caret-left']"
+  />
 </template>
 
 <style lang="scss">
+  details[open] {
+    .callout-toggle-icon {
+      @apply -rotate-90;
+    }
+  }
+
   .callout-icon {
     &.note {
       @apply text-[#448AFF];

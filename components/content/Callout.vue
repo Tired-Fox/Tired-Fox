@@ -29,13 +29,10 @@
     <details :open="open">
       <summary class="callout-head flex items-center gap-4 not-prose">
         <CalloutHead 
+          :toggle="toggle"
           :type="getType(type)"
           :icon="getIcons(type)" 
           :title="title ? title : getTitle(type)"
-        />
-        <FontAwesomeIcon 
-          class="ml-auto transition-transform duration-300 callout-toggle-icon"
-          :icon="['fas', 'caret-left']"
         />
       </summary>
       <div class="p-3 prose mx-auto">
@@ -48,6 +45,7 @@
   <div v-else class="callout my-4" :class="[getType(type)]">
     <div class="callout-head flex items-center gap-4 m-0 p-0 not-prose">
       <CalloutHead 
+        :toggle="toggle"
         :type="getType(type)"
         :icon="getIcons(type)" 
         :title="title ? title : getTitle(type)"
@@ -60,11 +58,6 @@
 </template>
 
 <style scoped lang="scss">
-  details[open] {
-    .callout-toggle-icon {
-      @apply -rotate-90;
-    }
-  }
 
   details summary::-webkit-details-marker {
     display:none;
