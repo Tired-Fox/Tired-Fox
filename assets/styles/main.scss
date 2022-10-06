@@ -28,11 +28,11 @@ p {
     }
 
     .code-filename {
-        @apply opacity-100 transition-opacity text-sm duration-300 ease-in-out;
+        @apply opacity-100 transition-opacity text-sm duration-200 ease-in-out;
     }
 
     .code-copy {
-        @apply opacity-0 transition-opacity duration-500;
+        @apply opacity-0 transition-opacity duration-200;
     }
 }
 
