@@ -26,7 +26,7 @@
     <ul class="flex flex-col gap-2 px-2">
       <!-- render each link with depth class -->
       <li v-for="link of flattenLinks(links)" :key="link.id" :class="`toc-link _${link.depth}`">
-        <a :href="`#${link.id}`">
+        <a :href="`#${link.id}`" class="no-underline hover:underline">
           {{ link.text }}
         </a>
       </li>

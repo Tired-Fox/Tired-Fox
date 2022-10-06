@@ -1,9 +1,14 @@
 ---
-title: 'First Post'
-description: 'This is my first article!'
+title: 'Markdown Style'
+description: 'This article is a representation of the markdown styling for this website.'
 img: 'https://picsum.photos/900/600'
-tags: [Sample, All]
+tags: [Markdown]
 ---
+
+[Internal Link](/articles/snippets/rust/sample_snippet)
+[Internal ID](#paragraph)
+[External Link](https://www.example.com)
+[External Link](//www.example.com)
 
 ## Headings
 
@@ -106,11 +111,6 @@ Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the ses
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 
-::InfoBox{type="something" title="Custom title goes here"}
-This will be rendered inside the `description` slot. _It's important_ to see how this **works**.
-[More information can be found here](#)
-::
-
 ## Math
 
 Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.
@@ -118,3 +118,68 @@ Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equat
 $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
+
+## Callouts
+
+
+::Callout{type="quote" title="Custom Title"}
+1. All callout contents are rendered with the same styling as the rest of the markdown.
+1. Callouts can be statically open. 
+1. Callout titles default to the type unless specified
+
+```rust
+fn main() {
+    println!("Can have it here too!");
+}
+```
+::
+
+::Callout{type="info" toggle open}
+1. Callouts can be collapsible 
+2. Collapsible callouts can be set to be open by default
+::
+
+::Callout{type="tip"}
+Callouts can be Nested
+
+
+    :::Callout{type="info"}
+    Nested callout
+    :::
+::
+
+::Callout{type="note"}
+The styling and inspiration for these callouts comes from [mkdocs-material](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#fontawesome)
+::
+
+::Callout{type="failure" toggle}
+Test callout
+::
+
+::Callout{type="success" toggle}
+Test callout
+::
+
+::Callout{type="warning" toggle}
+Test callout
+::
+
+::Callout{type="danger" toggle}
+Test callout
+::
+
+::Callout{type="bug" toggle}
+Test callout
+::
+
+::Callout{type="example" toggle}
+Test callout
+::
+
+::Callout{type="quote" toggle}
+Test callout
+::
+
+::Callout{type="question" toggle}
+Test callout
+::

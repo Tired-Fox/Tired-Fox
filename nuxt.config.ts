@@ -10,6 +10,13 @@ export default defineNuxtConfig({
   head: {
     link: [
         { ref: 'icon', type: 'image/x-icon', href: '@/favicon.ico'}
+    ],
+    meta: [
+        {
+            name: 'viewport',
+            content: 'width=device-width',
+            'initial-scale': 1,
+        }
     ]
   },
   css:['@/assets/styles/main.scss'],

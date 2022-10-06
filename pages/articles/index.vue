@@ -14,11 +14,11 @@
       </div>
     </header>
     <section class="p-4 py-8 m-auto max-w-3xl">
-      <!-- Render list of all articles in ./content/blog using `path` -->
+      <!-- Render list of all articles in ./content/articles using `path` -->
       <Tags />
       <!-- Provide only defined fields in the `:query` prop -->
       <ContentList
-        path="/blog"
+        path="/articles"
         :query="{
           only: ['title', 'description', 'tags', '_path', 'img'],
         }"
@@ -29,12 +29,12 @@
             <li v-for="article in list" :key="article._path" class="pt-6 first-of-type:border-none border-t border-slate-200">
               <NuxtLink :to="article._path" class="no-underline">
                 <div class="flex items-start gap-4">
-                  <div v-if="article.img" class="w-32">
+                  <!-- <div v-if="article.img" class="w-32">
                     <img
                       :src="`${article.img}`"
                       :alt="article.title" class="rounded-lg w-full h-full object-cover" />
                   </div>
-                  <div v-else class="w-32"></div>
+                  <div v-else class="w-32"></div> -->
                   <header>
                     <h1 class="text-2xl font-semibold">{{ article.title }}</h1>
                     <p>{{ article.description }}</p>
