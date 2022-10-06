@@ -49,7 +49,7 @@
             </strong>
           </p>
           <FontAwesomeIcon
-            class="ml-auto transition-transform duration-300 callout-toggle-icon"
+            class="ml-auto transition-transform callout-toggle-icon"
             :icon="['fas', 'caret-left']"
             :class="{'rotate-icon': expand}"
           />
