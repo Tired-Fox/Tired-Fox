@@ -66,6 +66,10 @@
     }
   }
 
+  details summary::-webkit-details-marker {
+    display:none;
+  }
+
   .callout {
     
     @apply rounded-md overflow-hidden shadow-md shadow-slate-300 border-2 border-solid;
