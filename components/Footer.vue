@@ -18,7 +18,7 @@
       <nuxt-link to="https://github.com/Tired-Fox" title="Tired-Fox Github" aria-label="Open tired fox github">
         <FontAwesomeIcon :icon="['fab', 'github']" class="hover:text-indigo-600" />
       </nuxt-link>
-      <nuxt-link to="" title="Tired-Fox Twitch" aria-label="Open tired fox twitch">
+      <nuxt-link href="https://www.twitch.tv/tiredfoxd" title="Tired-Fox Twitch" aria-label="Open tired fox twitch">
         <FontAwesomeIcon :icon="['fab', 'twitch']" class="hover:text-purple-600" />
       </nuxt-link>
     </div>

@@ -10,7 +10,7 @@
     </p>
     <p class="text-lg mt-5">
       I also live stream a range of video games on my 
-      <nuxt-link to="" class="text-purple-500">twitch</nuxt-link>
+      <nuxt-link to="https://www.twitch.tv/tiredfoxd" class="text-purple-500" target="_blank">twitch</nuxt-link>
     </p>
   </div>
 </template>
