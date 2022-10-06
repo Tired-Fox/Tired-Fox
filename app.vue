@@ -7,13 +7,18 @@
 
 <script>
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBan, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
+import { faBan, faTriangleExclamation, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCircleQuestion, faClipboard } from "@fortawesome/free-regular-svg-icons";
 
 library.add(
+  // Solid
   faBan,
+  faCheck,
   faTriangleExclamation,
-  faCircleQuestion
+
+  // Regular
+  faCircleQuestion,
+  faClipboard,
 );
 </script>
 

@@ -3,6 +3,9 @@ title: "Todo"
 description: "A todo list for what is left to do on this nuxt website"
 tags: [Todo, All]
 ---
+## Styling
+- [ ] KBD in markdown to a better style
+- [ ] Better admonition / Callouts
 
 ## Todo
 - [ ] Pagination for blog list on `/blog` and `/blog/tags`

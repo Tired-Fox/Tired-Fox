@@ -1,5 +1,13 @@
+<script setup lang="ts">
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+  const clipboard = ['far', 'clipboard']
+  const checkmark = ['fas', 'check']
+</script>
+
 <script lang="ts">
   import { defineComponent } from '#imports'
+
   export default defineComponent({
     props: {
       code: {
@@ -17,6 +25,27 @@
       highlights: {
         type: Array as () => number[],
         default: () => []
+      }
+    },
+    data() {
+      return {
+        icon: ['far', 'clipboard'],
+        copyTimeout: null,
+      }
+    },
+    methods: {
+      copyCode () {
+        navigator.clipboard.writeText(this.code);
+        this.icon = ['fas', 'check'];
+
+        // If timeout already active clear it and reset the timeout
+        if (this.copyTimeout) {
+          clearTimeout(this.copyTimeout);
+        }
+        this.copyTimeout = setTimeout(()=> {
+          this.icon = ['far', 'clipboard'];
+          this.copyTimeout = null;
+        },1500)
       }
     }
   })
@@ -37,6 +66,12 @@
     >
       {{filename}}
     </span>
+    <button 
+      class="code-copy absolute -bottom-1 -right-1 rounded z-10 bg-zinc-700 w-8 h-10"
+      @click="copyCode"
+    >
+      <FontAwesomeIcon :icon="icon" class="text-zinc-200" />
+    </button>
   </div>
 </template>
 
