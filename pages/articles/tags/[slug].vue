@@ -22,11 +22,11 @@
         </div>
       </header>
       <section class="p-4 py-8 m-auto max-w-3xl">
-        <!-- Render list of all articles in ./content/blog using `path` -->
+        <!-- Render list of all articles in ./content/articles using `path` -->
         <Tags />
         <!-- Provide only defined fieldsin the `:query` prop -->
         <ContentList
-          path="/blog"
+          path="/articles"
           :query="{
             only: ['title', 'description', 'tags', '_path', 'img'],
             where: {
@@ -51,7 +51,7 @@
                       <p>{{ article.description }}</p>
                       <ul class="article-tags">
                         <li class="tag" v-for="(tag, n) in article.tags" :key="n">
-                          <NuxtLink :to="`/blog/tags/${tag}`" class="underline"> {{ tag }} </NuxtLink>
+                          <NuxtLink :to="`/articles/tags/${tag}`" class="underline"> {{ tag }} </NuxtLink>
                         </li>
                       </ul>
                     </header>

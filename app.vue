@@ -1,19 +1,61 @@
 <template>
   <div>
-    <SiteHeader />
+    <Header />
     <NuxtPage />
+    <Footer />
   </div>
 </template>
 
 <script>
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBan, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
+
+// Solid
+import { 
+  faTriangleExclamation,
+  faCheck,
+  faCaretLeft,
+  faCircleInfo,
+  faXmark,
+  faCircleQuestion,
+  faPencil,
+  faFireFlameCurved,
+  faBolt,
+  faBug,
+  faVial,
+  faQuoteRight,
+} from "@fortawesome/free-solid-svg-icons";
+
+// Regular
+import {
+  faClipboard 
+} from "@fortawesome/free-regular-svg-icons";
+
+import {
+  faGithub,
+  faTwitch
+} from "@fortawesome/free-brands-svg-icons";
 
 library.add(
-  faBan,
+  // Solid
+  faCheck,
+  faCircleInfo,
+  faCaretLeft,
   faTriangleExclamation,
-  faCircleQuestion
+  faXmark,
+  faCircleQuestion,
+  faPencil,
+  faFireFlameCurved,
+  faBolt,
+  faBug,
+  faVial,
+  faQuoteRight,
+
+  // Regular
+  faClipboard,
+
+  // Brands
+  faGithub,
+  faTwitch,
 );
 </script>
 

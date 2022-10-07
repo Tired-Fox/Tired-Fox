@@ -1,9 +1,13 @@
 * {
-    @apply scroll-m-20;
+    @apply scroll-m-20 box-border;
 }
   
 html {
     @apply scroll-smooth;
+}
+
+body {
+    // @apply bg-zinc-100 dark:bg-zinc-800;
 }
 
 a {
@@ -16,15 +20,27 @@ p {
     }
 }
 
+ul.contains-task-list, ol.contains-task-list {
+    list-style: none !important;
+}
+
 .code-block {
     &:hover {
         .code-filename {
-            @apply opacity-0;
+            @apply xl:opacity-0;
+        }
+
+        .code-copy {
+            @apply opacity-100;
         }
     }
 
     .code-filename {
-        @apply opacity-100 transition-opacity;
+        @apply opacity-100 transition-opacity text-sm duration-200 ease-in-out;
+    }
+
+    .code-copy {
+        @apply xl:opacity-0 transition-opacity duration-200;
     }
 }
 
@@ -56,7 +72,7 @@ section.footnotes {
 }
 
 sup {
-    @apply ml-1
+    @apply ml-1;
 }
 
 th {
@@ -72,15 +88,24 @@ mark {
 
 kbd {
     kbd {
-        background-color: #eee;
-        border-radius: 3px;
-        border: 1px solid #b4b4b4;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
-        color: #333;
-        display: inline-block;
-        padding: 0 8px;
-        white-space: nowrap;
-        @apply mx-1 text-sm;
+        @apply  rounded border border-solid cursor-default text-sm leading-none min-w-[3px] w-fit inline-block text-center px-[2px] py-[5px] relative -top-[1px] hover:top-[1px] mx-1;
+
+        @apply bg-zinc-300 shadow-zinc-400 border-zinc-300 text-black;
+
+        box-shadow: 0 2px 0 1px #a1a1aa;
+        &:hover {
+            box-shadow: 0 1px 0 0.5px #a1a1aa;
+        }
+
+        // @apply dark:bg-zinc-600 dark:border-zinc-600 dark:text-white;
+
+        // @media (prefers-color-scheme: dark) {
+        //     box-shadow: 0 2px 0 1px #3f3f46;
+        //     &:hover {
+        //         box-shadow: 0 1px 0 0.5px #3f3f46;
+        //     }
+        // }
+        
     }
 }
   

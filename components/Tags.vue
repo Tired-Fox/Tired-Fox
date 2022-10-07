@@ -25,8 +25,8 @@
     expanded.value = !expanded.value;
   };
   
-  // get only tags data from `/blog`
-  const { data } = await useAsyncData("tags", () => queryContent("blog").only(["tags"]).find());
+  // get only tags data from `/articles`
+  const { data } = await useAsyncData("tags", () => queryContent("articles").only(["tags"]).find());
   
   // generate array without duplicates from flattened array
   const articleTags = [...new Set(flatten(data.value, "tags"))];
@@ -41,7 +41,7 @@
     <ul class="article-tags" :class="{ expanded: expanded }">
       <!-- list out tags with links -->
       <li v-for="(tag, n) in articleTags" :key="n" class="tag">
-        <NuxtLink :to="`/blog/tags/${tag}`" class="font-semibold"> {{ tag }} </NuxtLink>
+        <NuxtLink :to="`/articles/tags/${tag}`" class="font-semibold"> {{ tag }} </NuxtLink>
       </li>
     </ul>
   </div>
