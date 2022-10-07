@@ -18,9 +18,11 @@
   @apply prose-pre:shadow prose-pre:shadow-black;
   @apply prose-headings:no-underline;
   @apply prose-code:bg-slate-200 prose-code:px-[.3rem] prose-code:py-[.1rem] prose-code:rounded-md;
-  @apply prose-blockquote:bg-slate-50 prose-blockquote:p-1;
 
   /* Table */
   @apply prose-tr:prose-thead:bg-zinc-800;
   @apply prose-td:text-center prose-th:text-center prose-th:text-white;
+
+  /* blockquote */
+  @apply prose-blockquote:bg-slate-100 prose-blockquote:p-[0.1rem] prose-blockquote:rounded-md;
 }
