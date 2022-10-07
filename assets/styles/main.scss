@@ -24,6 +24,14 @@ ul.contains-task-list, ol.contains-task-list {
     list-style: none !important;
 }
 
+table {
+    tbody {
+        tr:nth-child(odd) {
+            @apply bg-zinc-50
+        }
+    }
+}
+
 .code-block {
     &:hover {
         .code-filename {
