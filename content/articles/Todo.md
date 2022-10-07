@@ -12,6 +12,9 @@ tags: [Todo, All]
 - [ ] Ability to have inline tabbed content inside markdown
 - [ ] Site map with [@nuxt/sitemap](https://sitemap.nuxtjs.org/), [@nuxt/content reference](https://content.nuxtjs.org/v1/community/integrations#nuxtjssitemap)
 - [ ] Pagination for article list on `/articles` and `/articles/tags`
+- [ ] Infinite scroll and better scrolling
+- [ ] Sorting
+- [ ] Filtering
 - [ ] Better filters for post list
 - [ ] Dynamic Projects section
   

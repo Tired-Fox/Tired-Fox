@@ -31,7 +31,7 @@
 
 <template>
   <!-- Collapsable  -->
-  <ClientOnly aria-placeholder="Loading...">
+  <ClientOnly>
     <div v-if="toggle" class="callout my-4" :class="[getType(type)]">
       <div 
         class="callout-head flex items-center gap-4 not-prose cursor-pointer"
@@ -80,6 +80,8 @@
 </template>
 
 <style scoped lang="scss">
+  @import "../../assets/styles/callouts.scss";
+  
   .rotate-icon {
     @apply -rotate-90;
   }
@@ -89,125 +91,27 @@
   }
 
   .callout {
-    
     @apply rounded-md overflow-hidden shadow-md shadow-slate-300 border-2 border-solid;
-
+    
     .callout-head {
       @apply px-4 h-[3rem] leading-none;
     }
-
-    &.failure {
-      @apply border-[#FF5252];
-      .callout-head {
-        @apply bg-[#FF5252]/10;
-      }
-    }
-
-    &.info {
-      @apply border-[#00B8D4];
-      .callout-head {
-        @apply bg-[#00B8D4]/10;
-      }
-    }
-
-    &.note {
-      @apply border-[#448AFF];
-      .callout-head {
-        @apply bg-[#448AFF]/10;
-      }
-    }
-
-    &.tip {
-      @apply border-[#00BFA5];
-      .callout-head {
-        @apply bg-[#00BFA5]/10;
-      }
-    }
-
-    &.success {
-      @apply border-[#03BF52];
-      .callout-head {
-        @apply bg-[#03BF52]/10;
-      }
-    }
-
-    &.warning {
-      @apply border-[#FF9100];
-      .callout-head {
-        @apply bg-[#FF9100]/10;
-      }
-    }
-
-    &.danger {
-      @apply border-[#FF1744];
-      .callout-head {
-        @apply bg-[#FF1744]/10;
-      }
-    }
     
-    &.bug {
-      @apply border-[#F50057];
-      .callout-head {
-        @apply bg-[#F50057]/10;
-      }
-    }
-
-    &.example {
-      @apply border-[#7C4DFF];
-      .callout-head {
-        @apply bg-[#7C4DFF]/10;
-      }
-    }
-    
-    &.quote {
-      @apply border-[#9E9E9E];
-      .callout-head {
-        @apply bg-[#9E9E9E]/10;
-      }
-    }
-    
-    &.question {
-      @apply border-[#64DD17];
-      .callout-head {
-        @apply bg-[#64DD17]/10;
+    @each $type, $color in $colors {
+      &.#{$type} {
+        @apply border-[#{$color}];
+        .callout-head {
+          @apply bg-[#{$color}]/10;
+        }
       }
     }
   }
 
   .callout-icon {
-    &.note {
-      @apply text-[#448AFF];
-    }
-    &.info {
-      @apply text-[#00B8D4];
-    }
-    &.tip {
-      @apply text-[#00BFA5];
-    }
-    &.failure {
-      @apply text-[#FF5252];
-    }
-
-    &.success {
-      @apply text-[#03BF52];
-    }
-    &.warning {
-      @apply text-[#FF9100];
-    }
-    &.danger {
-      @apply text-[#FF1744];
-    }
-    &.bug {
-      @apply text-[#F50057];
-    }
-    &.example {
-      @apply text-[#7C4DFF];
-    }
-    &.quote {
-      @apply text-[#9E9E9E];
-    }
-    &.question {
-      @apply text-[#64DD17];
+    @each $type, $color in $colors {
+      &.#{$type} {
+        @apply text-[#{$color}];
+      }
     }
   }
 </style>

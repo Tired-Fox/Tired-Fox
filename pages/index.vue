@@ -12,5 +12,8 @@
       I also live stream a range of video games on my 
       <nuxt-link to="https://www.twitch.tv/tiredfoxd" class="text-purple-500" target="_blank">twitch</nuxt-link>
     </p>
+    <p>
+      Extra content
+    </p>
   </div>
 </template>
