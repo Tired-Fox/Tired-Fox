@@ -17,6 +17,25 @@
   
   // destrucure `prev` and `next` value from data
   const [prev, next] = data.value.surround;
+  const currentSection = ref('');
+
+  onMounted(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            currentSection.value = entry.target.getAttribute('id');
+            console.log(entry.target);
+          }
+        })
+      },
+      {
+        rootMargin: '0px 0px -90% 0px',
+      }
+    )
+    document.querySelectorAll('article h2, article h3').forEach((section) => {
+      observer.observe(section);
+    })
+  })
   
   // set the meta
   useHead({
@@ -56,7 +75,7 @@
       <hr />
       <section class="article-section">
         <aside class="col-span-full md:col-span-2 row-start-1 w-full pt-14">
-          <Toc :links="data.article.body.toc.links" />
+          <Toc :links="data.article.body.toc.links" :currentSection="currentSection" />
         </aside>
         <article class="article">
           <!-- render document coming from query -->
@@ -71,7 +90,9 @@
         </article>
       </section>
       <PrevNext v-if="prev || next" :prev="prev" :next="next" />
+      
     </main>
+    
 </template>
 
 <style scoped>
