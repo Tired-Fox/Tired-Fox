@@ -19,12 +19,12 @@
   };
 </script>
 <template>
-  <nav class="sticky top-20 p-4 rounded-lg max-h-[calc(100vh-6rem)] overflow-auto ml-10">
+  <nav class="sticky top-20 p-4 rounded-lg max-h-[calc(100vh-6rem)] overflow-auto ml-10 toc">
     <ul class="flex flex-col gap-1 px-2">
       <!-- render each link with depth class -->
       <li 
         v-for="link of flattenLinks(links)" 
-        class="transition-all pl-4 py-1 border-l-2 border-solid border-slate-400 text-sm"
+        class="transition-all pl-4"
         :key="link.id" 
         :class="[
           `toc-link _${link.depth}`, 
@@ -34,6 +34,9 @@
         <a 
           :href="`#${link.id}`"
           class="no-underline hover:underline"
+          @click="() => {
+            currentSection = link.id
+          }"
         >
           {{ link.text }}
         </a>
@@ -48,9 +51,9 @@
     color: rgb(2 132 199) !important;
   }
 
-  .toc {
+  /* .toc {
     @apply p-4 bg-slate-50 border border-slate-200 rounded-lg;
-  }
+  } */
   
   .toc-link {
     @apply text-slate-500;
@@ -63,5 +66,9 @@
   }
   .toc-link._undefined {
     @apply ml-8;
+  }
+
+  .toc ul {
+    list-style-type: circle;
   }
 </style>
