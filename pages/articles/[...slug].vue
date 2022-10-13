@@ -17,7 +17,7 @@
   
   // destrucure `prev` and `next` value from data
   const [prev, next] = data.value.surround;
-  const currentSection = ref('');
+  const currentSection = ref(data.value.article.body.toc.links[0].id);
 
   onMounted(() => {
     const observer = new IntersectionObserver((entries) => {
