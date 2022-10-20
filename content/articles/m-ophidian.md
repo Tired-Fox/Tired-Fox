@@ -149,7 +149,8 @@ Framework provided information:
   - **site**: This is the site information like name, url, uri, description, etc. (`{{ site.name }}`)
   - **env** : This is the global variables the user wants to make available to every templates. (`{{ env.socials.github }}`)
   - **meta**: The meta data that is retrieved from frontmatter in a markdown file. (`{{ meta.tags }}`)
-  - **content**: Gives access to the information for each page defined in `content/` directory. (`{{ content['file_name without extension'].description }}`)
+  - **pages**: Gives access to the information for each page defined in the `content/` and `pages/` directories. (`{{ pages['recipes/chocolage_cake'].description }}`)
+  - **content**: The rendered html from a markdown file
 
 - ***Computed during site generation***
   - **hooks**: *(Maybe not possible with jinja2)* Idea is a work in progress. Some sort of way of including methods or functions then allowing the user to specify that they want to retrieve that data. (`{{ hook.get_weather() }}`)
@@ -167,4 +168,120 @@ Framework provides built in `[slug]` and `[...slug]` features which are "catch a
 
 - `pages/articles/[slug].html` would map to any file in the `content/articles/` directory (`content/articles/*.md`)
 - `pages/articles/[...slug].html` would map to any file and directory of `content/articles` (`content/articles/**/*.md`)
-___
+- 
+---
+
+### Workflow
+
+Begin by creating a new project. Right now you need to manually create all the files.
+A valid file structure will look like the text below. You can add any other folders and files outside of this structure; they will most likely be ignored.
+
+```plaintext
+project
+├ components/
+│ └ */**/.html
+├ content/
+│ └ */**/*.html
+├ layouts/
+│ └ */**/*.html
+├ pages/
+│ ├ */**/*.md
+│ └ */**/*.html
+└ static/
+  └ */**/*.*
+```
+
+When you build or serve the project you will get a `site/` folder added. This is all the files compiled together. These are also the files you can host on a server.
+
+Eventually, when there is an automated way of creating a new project, you will also get example files in the main folders. There will be example layouts, components, content, dynamic routes, pages, and static assets.
+
+Enjoy the use of a live reloading server that incrementally builds your changes that can be seen immediately. 
+
+**File Layout**
+
+Here I will attempt to describe what can be in each file and what a good format may be.
+
+* Lets start with components.
+ 
+Components are html files. I chose this format because most text editors have great language support and highlighting for html. Components are meant to be small reusable snippets that you want in your website. The components filename is converted to the name of the component so that is what you use to access it in your layouts and templates.
+
+Because of the nature of HTML and CSS you can include specific styling in a `<style>` tag at the root level of the component. this means you could make a component that looks like this.
+
+```html[header.html]
+<div id="header">
+    <a href="/">Home</a>
+    <div id="nav">
+        <a href="/blog">blog</a>
+        <a href="/news">news</a>
+    <div>
+</div>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        padding-block: 1rem;
+        padding-inline: 5rem;
+    }
+
+    #header a{
+        color: black;
+        text-decoration: none;
+    }
+
+    #header a:hover {
+        text-decoration: underline;
+    }
+</style>
+```
+
+After this component is created in the `components/` directory, you can use it in any html template file with `{% include cmpt.header %}`.
+
+**Other html template files**
+
+I recommend reading the [Template Designer Documentation](https://jinja.palletsprojects.com/en/3.1.x/templates/) from Jinja2 as that is the full power of what you can do. You follow the same rules and logic, with added ease of use with mophidian giving access to your components and layouts without having to type in the path. However that is an option too, even though it is not recommended.
+
+Say that you created a template/layout named base.html in the `layouts/` directory. You can do the following to extend a template/layout:
+
+```html[some_layout.html]
+{% extend lyt.base %}
+<head>
+    {% block header}
+    {{ super() }}
+    <link rel="stylesheet" href="/css/header.css">
+    {% endblock %}
+</head>
+{% block content %}
+    {{ content }}
+{% endblock %}
+```
+
+Or if you implemented the `base.html` file somewhere else you can do something like this.
+
+```html[some_layout.html]
+{% extend "path/to/layout/base.html" %}
+<!-- ... Override blocks here ... -->
+```
+
+**Markdown files**
+
+Markdown files are the easiest. If you want data variables from the file you can use frontmatter. 
+
+It will look a little like this:
+
+```yaml[post.md]
+---
+title: Some Title Goes Here
+readTime: 3 min
+.
+.
+.
+---
+```
+
+This framework then opens these variables up to you with a variable called `meta`. You can call it directly for a layout page that is for a markdown file. Otherwise, if you decide to access the meta file form one of the pages/contents variables you can do `pgs[idx].meta` or `cnt[idx].meta`.

@@ -52,10 +52,10 @@
 </script>
 
 <template>
-  <div class="relative code-block" >
+  <div class="relative code-block" :class="{ filename_padding: filename }" >
     <span 
       v-if="language" 
-      class="absolute top-1 right-2 px-1 z-10 text-slate-600"
+      class="absolute bottom-0 right-[50%] translate-x-[50%] px-1 z-10 text-slate-600"
     >
       {{language}}
     </span>
@@ -82,7 +82,11 @@ pre code .line {
 }
 
 .code-filename {
-  @apply absolute bottom-0 right-[50%] translate-x-[50%]  z-10 px-3 py-1  rounded-lg text-slate-600;
-  @apply xl:-bottom-1 xl:-right-1 xl:translate-x-[0] xl:bg-zinc-700 xl:shadow-sm xl:shadow-slate-900 xl:text-white;
+  @apply absolute z-10 px-3 py-1 top-1 right-2 rounded-lg text-slate-600;
+  /* @apply xl:-bottom-1 xl:-right-1 xl:translate-x-[0] xl:bg-zinc-700 xl:shadow-sm xl:shadow-slate-900 xl:text-white; */
+}
+
+.code-block pre {
+  padding-bottom: 1.75rem !important;
 }
 </style>
