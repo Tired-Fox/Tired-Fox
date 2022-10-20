@@ -32,25 +32,25 @@ table {
     }
 }
 
-.code-block {
-    &:hover {
-        .code-filename {
-            @apply xl:opacity-0;
-        }
+// .code-block {
+//     &:hover {
+//         .code-filename {
+//             @apply xl:opacity-0;
+//         }
 
-        .code-copy {
-            @apply opacity-100;
-        }
-    }
+//         .code-copy {
+//             @apply opacity-100;
+//         }
+//     }
 
-    .code-filename {
-        @apply opacity-100 transition-opacity text-sm duration-200 ease-in-out;
-    }
+//     .code-filename {
+//         @apply opacity-100 transition-opacity text-sm duration-200 ease-in-out;
+//     }
 
-    .code-copy {
-        @apply xl:opacity-0 transition-opacity duration-200;
-    }
-}
+//     .code-copy {
+//         @apply xl:opacity-0 transition-opacity duration-200;
+//     }
+// }
 
 a.data-footnote-backref {
     text-decoration: none !important;
