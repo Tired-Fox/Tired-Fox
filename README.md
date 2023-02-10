@@ -1,5 +1,42 @@
-# Tired Fox
+# Content v2 Minimal Starter
 
-There are always new things to learn and new things to create with endless possible solutions.
+Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
 
-Website: [tired-fox.vercel.app](https://tired-fox.vercel.app/)
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install
+```
+
+## Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
   const clipboard = ['far', 'clipboard']
   const checkmark = ['fas', 'check']
 </script>
@@ -35,7 +33,7 @@
     },
     methods: {
       copyCode () {
-        navigator.clipboard.writeText(this.code);
+        navigator.clipboard.writeText(this.code.trim());
         this.icon = ['fas', 'check'];
 
         // If timeout already active clear it and reset the timeout
@@ -67,10 +65,10 @@
       {{filename}}
     </span>
     <button 
-      class="code-copy absolute -bottom-1 -right-1 rounded z-10 bg-zinc-700 w-8 h-10 shadow-sm shadow-slate-900 "
+      class="code-copy absolute border-none -bottom-1 -right-1 rounded z-10 bg-zinc-700 w-8 h-10 shadow-sm shadow-slate-600 "
       @click="copyCode"
     >
-      <FontAwesomeIcon :icon="icon" class="text-zinc-200" />
+      <font-awesome-icon :icon="icon" class="text-zinc-200" />
     </button>
   </div>
 </template>

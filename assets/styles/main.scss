@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     @apply scroll-m-20 box-border;
 }
@@ -51,6 +53,10 @@ table {
 //         @apply xl:opacity-0 transition-opacity duration-200;
 //     }
 // }
+
+.article {
+    font-family: 'Poppins', sans-serif;
+}
 
 a.data-footnote-backref {
     text-decoration: none !important;
@@ -146,4 +152,6 @@ code {
     &::after {
         display: none;
     }
+
+    background-color: transparent !important;
 }
