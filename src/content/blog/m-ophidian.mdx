@@ -1,8 +1,8 @@
 ---
 title: 'M-Ophidian'
 description: 'A python based static site generator (SSG). Inspired from mkDocs, next.js, vue.js, nuxt.js, mynt, astro, and just about every other SSG.'
-img: 'https://wallpaperaccess.com/full/344618.jpg'
-tags: [Python, SSG, Jinja2, Live-Server, Website, M-Ophidian]
+pubDate: 2/13/2023
+heroImage: 'https://wallpaperaccess.com/full/344618.jpg'
 ---
 
 # Mophidian - A python based SSG
@@ -156,7 +156,7 @@ Framework provided information:
   - **hooks**: *(Maybe not possible with jinja2)* Idea is a work in progress. Some sort of way of including methods or functions then allowing the user to specify that they want to retrieve that data. (`{{ hook.get_weather() }}`)
   - **components**: This is the list of all components specified in the components folder. (`{% include components.dropdown %}`)
   - **layouts**: Gives access to all user, and internally defined layouts. (`{% include layouts.nav %}`) or (`{% extend layouts.base_template %}`)
-  
+
 
 - Users may also include other templates as needed using a string. Ex. `{% include "../path/some_template" %}`.
 
@@ -168,7 +168,7 @@ Framework provides built in `[slug]` and `[...slug]` features which are "catch a
 
 - `pages/articles/[slug].html` would map to any file in the `content/articles/` directory (`content/articles/*.md`)
 - `pages/articles/[...slug].html` would map to any file and directory of `content/articles` (`content/articles/**/*.md`)
-- 
+
 ---
 
 ### Workflow
@@ -207,7 +207,7 @@ Components are html files. I chose this format because most text editors have gr
 
 Because of the nature of HTML and CSS you can include specific styling in a `<style>` tag at the root level of the component. this means you could make a component that looks like this.
 
-```html[header.html]
+```html
 <div id="header">
     <a href="/">Home</a>
     <div id="nav">
@@ -248,7 +248,7 @@ I recommend reading the [Template Designer Documentation](https://jinja.palletsp
 
 Say that you created a template/layout named base.html in the `layouts/` directory. You can do the following to extend a template/layout:
 
-```html[some_layout.html]
+```html
 {% extend lyt.base %}
 <head>
     {% block header}
@@ -263,7 +263,7 @@ Say that you created a template/layout named base.html in the `layouts/` directo
 
 Or if you implemented the `base.html` file somewhere else you can do something like this.
 
-```html[some_layout.html]
+```html
 {% extend "path/to/layout/base.html" %}
 <!-- ... Override blocks here ... -->
 ```
@@ -274,7 +274,7 @@ Markdown files are the easiest. If you want data variables from the file you can
 
 It will look a little like this:
 
-```yaml[post.md]
+```yaml
 ---
 title: Some Title Goes Here
 readTime: 3 min

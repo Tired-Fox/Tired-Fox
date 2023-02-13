@@ -1,0 +1,122 @@
+@tailwind components;
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: auto;
+  padding: 20px;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  @apply dark:bg-zinc-900 dark:text-zinc-300
+}
+
+code {
+  &::after,
+  &::before {
+    display: none;
+  }
+}
+
+article.prose {
+  margin-inline: auto;
+  @apply prose-zinc dark:prose-invert;
+  @apply prose-pre:shadow prose-pre:shadow-black;
+  @apply prose-headings:no-underline;
+  @apply prose-code:bg-orange-200 prose-code:shadow prose-code:px-[.4rem] prose-code:py-[.1rem] prose-code:rounded-md dark:prose-code:bg-slate-500/50;
+
+  /* Table */
+  @apply prose-tr:prose-thead:bg-zinc-800;
+  @apply prose-td:text-center prose-th:text-center prose-th:text-zinc-300;
+
+  pre {
+    code {
+      @apply bg-transparent shadow-none
+    }
+  }
+
+  /* blockquote */
+  @apply prose-blockquote:bg-slate-100 prose-blockquote:p-[0.1rem] prose-blockquote:px-[0.5rem] prose-blockquote:rounded-md dark:prose-blockquote:bg-slate-500/80;
+
+  blockquote > p {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  img {
+    aspect-ratio: 16/9;
+    @apply rounded-lg shadow shadow-black;
+  }
+
+  a.data-footnote-backref {
+    text-decoration: none !important;
+  }
+
+  section.footnotes {
+    @apply border-t border-solid border-zinc-700 mt-10;
+  }
+
+  sup {
+    @apply ml-1;
+  }
+
+  kbd {
+    kbd {
+      @apply rounded border border-solid cursor-default text-sm leading-none min-w-[3px] w-fit inline-block text-center px-[2px] py-[5px] relative -top-[1px] hover:top-[1px] mx-1;
+
+      @apply bg-zinc-300 shadow-zinc-400 border-zinc-300 text-black;
+
+      box-shadow: 0 2px 0 1px #a1a1aa;
+      &:hover {
+        box-shadow: 0 1px 0 0.5px #a1a1aa;
+      }
+
+      @apply dark:bg-zinc-600 dark:border-zinc-600 dark:text-white;
+
+      @media (prefers-color-scheme: dark) {
+          box-shadow: 0 2px 0 1px #3f3f46;
+          &:hover {
+              box-shadow: 0 1px 0 0.5px #3f3f46;
+          }
+      }
+    }
+  }
+
+  table {
+    tbody {
+      tr:nth-child(odd) {
+        @apply bg-zinc-50 dark:bg-zinc-500;
+      }
+
+      tr:nth-child(even) {
+        @apply dark:bg-zinc-600/90;
+      }
+    }
+  }
+}
+
+mark {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: rgba(255, 145, 0, 0.6);
+  color: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
