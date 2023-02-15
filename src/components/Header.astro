@@ -1,25 +1,16 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+
+const { class: className } = Astro.props;
 ---
 
-<header class="mx-auto w-[85%] max-w-[90ch]">
+<header class:list={['mx-auto w-[85%] max-w-[90ch] mb-8', className]}>
 	<h2 class="text-2xl font-bold">
 		{SITE_TITLE}
 	</h2>
 	<nav>
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-</style>

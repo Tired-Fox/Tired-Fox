@@ -115,7 +115,7 @@ Important file structure:
 Files in pages get their own directory where possible. This is more to follow file based routing and how most hosting services automatically load the index.html file when given a directory. So `pages/about/me.md` == `pages/about/me/index.html` when compiled. `index.md`, `readme.md`, `README.md`, and `index.html` all compile to a index.html file. A `index.html` file would take priority and all other files would be ignored. You can also specify the index.html file outside of the directory and have it compile into that directory. It is easier to show so here are the before and after:
     
 **Before compiling:**
-```plaintext
+```
 pages
     - about.md
     - about/
@@ -124,7 +124,7 @@ pages
 ```
 
 **After compiling:**
-```plaintext
+```
 pages
     - about/
       - index.html
@@ -134,7 +134,7 @@ pages
 ```
 
 **Url's**
-```plaintext
+```
 website/
 website/about/
 website/about/me/
@@ -176,7 +176,7 @@ Framework provides built in `[slug]` and `[...slug]` features which are "catch a
 Begin by creating a new project. Right now you need to manually create all the files.
 A valid file structure will look like the text below. You can add any other folders and files outside of this structure; they will most likely be ignored.
 
-```plaintext
+```
 project
 ├ components/
 │ └ */**/.html

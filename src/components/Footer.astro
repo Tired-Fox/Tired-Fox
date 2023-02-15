@@ -1,8 +1,10 @@
 ---
 const today = new Date();
+
+const { class: className } = Astro.props;
 ---
 
-<footer class="text-sm">
+<footer class:list={['text-sm h-fit', className]}>
 	&copy; 2023-{today.getFullYear()} Tired Fox. All rights reserved.
 </footer>
 <style>
