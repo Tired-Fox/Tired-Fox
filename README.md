@@ -1,7 +1,5 @@
 # Welcome!
 
-Hello to all developers 💻 and those of you striving to keep learning 📖.
-
 I have a passion for all aspects of programming and hold motivation to keep learning new topics. My skills are constantly evolving and I strive to learn more about all areas of programming.
 
 Check out my projects and join me on my quest to learn as much as possible about programming.
