@@ -16,6 +16,10 @@ body {
   @apply dark:bg-zinc-900 dark:text-zinc-300
 }
 
+pre code {
+  padding: 0 !important;
+}
+
 code {
   &::after,
   &::before {

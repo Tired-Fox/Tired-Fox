@@ -37,12 +37,19 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section>
-				<ul class="w-[70%] mx-auto">
+				<ul class="w-[70%] mx-auto flex flex-col gap-2">
 					{
 						posts.map((post) => (
 							<li>
 								<FormattedDate date={post.data.pubDate} />
 								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                <div class="flex gap-1 h-fit ml-2">
+                  { post.data.tags &&
+                    post.data.tags.map(tag => (
+                      <small class="text-zinc-900 bg-green-50 rounded-xl px-2">{tag}</small>
+                    ))
+                  }
+                </div>
 							</li>
 						))
 					}

@@ -3,6 +3,7 @@ title: 'M-Ophidian'
 description: 'A python based static site generator (SSG). Inspired from mkDocs, next.js, vue.js, nuxt.js, mynt, astro, and just about every other SSG.'
 pubDate: 2/13/2023
 heroImage: 'https://wallpaperaccess.com/full/344618.jpg'
+tags: ['python', 'ssg', 'mophidian']
 ---
 
 # Mophidian - A python based SSG
@@ -120,7 +121,7 @@ pages
     - about.md
     - about/
       - me.md
-    - index.html
+    - page.phml
 ```
 
 **After compiling:**
@@ -178,17 +179,17 @@ A valid file structure will look like the text below. You can add any other fold
 
 ```
 project
-├ components/
-│ └ */**/.html
 ├ content/
-│ └ */**/*.html
-├ layouts/
-│ └ */**/*.html
-├ pages/
-│ ├ */**/*.md
-│ └ */**/*.html
-└ static/
-  └ */**/*.*
+│ └ */**/*.phml
+├ public/
+│ └ */**/*.*
+└ src/
+  ├ components/
+  │ └ */**/.phml
+  └ pages/
+    ├ */**/*.md
+    ├ */**/page.phml
+    └ */**/layout.phml
 ```
 
 When you build or serve the project you will get a `site/` folder added. This is all the files compiled together. These are also the files you can host on a server.
