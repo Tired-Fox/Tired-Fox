@@ -7,16 +7,15 @@ Check out my projects and join me on my quest to learn as much as possible about
 ## 2023 Goals:
 - [ ] Finalize major releases for my python repos: `Mophidian`, `phml`, `watchserver`, `tcfg`, and `saimll`
 - [ ] Learn Linear (task management)
-- [ ] Learn Neovim
+- [x] Learn Neovim
 - [ ] Become proficient in Rust and Typescript
 - [ ] Stream my projects as they are being developed
 
 ## Upcoming Project Ideas:
 - Personal website with `Astro` and `Solid.js`
-- Rust based text editor using `tauri`
-- Rust browser project. Will involve new browser feature exploration. Inovative for looks and native features.
-    - Based off of chromium. Either uses parts of chromium or is built using chromium as a reference
-    - New looks and new way of thinking when it comes to browser scripting and use
+- Python based terminal/console input, includes key and mouse input. All platforms
+- Rust native ui application builder; [NativeUI](https://github.com/Tired-Fox/NativeUI)
+    - currentlly only supports windows and basic text elements 
 
 ## Notable Projects:
 - [**Mophidian**](https://github.com/Tired-Fox/Mophidian): A static site generator made with pure python and a new python templating language [phml](https://github.com/Tired-Fox/phml)
