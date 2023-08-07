@@ -69,10 +69,11 @@ footer {
     #signature {
         position: relative;
         display: flex;
-        align-items: end;
+        align-items: center;
         gap: .25rem;
 
         padding-left: 1rem;
+        padding-bottom: .1rem;
         border-bottom: 1px solid black;
 
 
@@ -80,6 +81,7 @@ footer {
             content: "x";
             position: absolute;
             left: -.25rem;
+            bottom: .1rem;
 
             padding: 0;
             margin: 0;
