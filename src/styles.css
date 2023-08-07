@@ -1,0 +1,157 @@
+/*https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFzWxpfK7mbye5X6s_aZU8fwCQ5aFsBhRGXg&usqp=CAU*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div#blueprint {
+    position: absolute;
+    left: 2vw;
+    top: 2vh;
+
+    width: 96vw;
+    height: 96vh;
+    height: 96dvh;
+
+    border: 2px solid black;
+}
+
+#scalers {
+    position: absolute;
+    left: .5vw;
+    top: 2vh;
+    top: 4dvh;
+
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+#scalers>span {
+    background-color: black;
+    width: .5rem;
+    height: .5rem;
+}
+
+#scalers>span:nth-child(even) {
+    opacity: .5;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+    height: 100%;
+    margin-inline: auto;
+    padding: 1rem;
+
+    justify-content: space-between;
+}
+
+aside {
+    position: sticky;
+    top: 0;
+
+    height: 96vh;
+    height: 96dvh;
+
+    /* border-right: 1px solid black; */
+}
+
+main {
+    position: absolute;
+    display: flex;
+
+    top: 2vh;
+    top: 2dvh;
+    left: 2vw;
+    width: 96vw;
+    min-height: 96vh;
+    min-height: 96dvh;
+
+    margin-inline: auto;
+}
+
+#title {
+    width: 100%;
+    padding: .5rem 1rem;
+
+    border: 1px solid black;
+    white-space: nowrap;
+}
+#title>h1 {
+    margin: 0;
+}
+#title>p{
+    margin: 0;
+}
+
+#legend {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 1rem 1.75rem;
+    padding-top: 2rem;
+
+    gap: .5rem;
+    border: 1px solid black;
+}
+
+.legend-item>svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+#legend::after {
+    content: "Legend";
+
+    position: absolute;
+    top: -10px;
+    left: .5rem;
+
+    padding: 1px 3px;
+
+    border: 1px solid black;
+    background-color: white;
+}
+
+#content {
+    height: 96vh;
+    height: 96dvh;
+    padding: 1rem;
+
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #262626 rgba(200, 200, 200, .4);
+    scroll-behavior: smooth;
+    scroll-padding-top: 1.6rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(200, 200, 200, .4);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #262626;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #262626;
+}
