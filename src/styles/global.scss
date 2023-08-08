@@ -49,9 +49,13 @@ body[data-theme=dark] {
 
 * {
     box-sizing: border-box;
+
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .65px;
     line-height: 1.3rem;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-secondary) rgba(var(--scroll-primary), .4);
 }
 
 h1, h2, h3, h4, h5 {
@@ -316,8 +320,6 @@ a {
     padding: 1rem;
 
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--scroll-secondary) rgba(var(--scroll-primary), .4);
     scroll-behavior: smooth;
     scroll-padding-top: 1.6rem;
 
