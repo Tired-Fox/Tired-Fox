@@ -1,11 +1,56 @@
 /*https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFzWxpfK7mbye5X6s_aZU8fwCQ5aFsBhRGXg&usqp=CAU*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap');
+
+:root {
+    --color-orange: 251, 133, 0;
+    --color-purple: 155, 93, 229;
+    --color-blue: 17, 138, 178;
+    --color-yellow: 255, 209, 102;
+    --color-red: 239, 71, 111;
+    --color-green: 6, 214, 160;
+
+    --scroll-primary: 200, 200, 200;
+    --scroll-secondary: #262626;
+
+    --text: #000f29;//#151b24;
+    --background: #edebe8;
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --color-orange: 255, 180, 162;
+        --color-purple: 288, 193, 249;
+        --color-blue: 169, 222, 249;
+        --color-yellow: 252, 246, 189;
+        --color-red: 255, 153, 200;
+        --color-green: 208, 244, 222;
+
+        --scroll-primary: 130, 130, 130;
+        --scroll-secondary: white;
+
+        --text: #edebe8;
+        --background: #000f24;
+    }
+}
+
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .65px;
+    line-height: 1.3rem;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Merriweather', serif;
+    letter-spacing: unset;
+    line-height: unset;
 }
 
 body {
     margin: 0;
     padding: 0;
+    color: var(--text);
+    background-color: var(--background);
 }
 
 nav {
@@ -27,7 +72,7 @@ aside {
     height: 96vh;
     height: 96dvh;
 
-    /* border-right: 1px solid black; */
+    /* border-right: 1px solid var(--text); */
 }
 
 main {
@@ -47,15 +92,17 @@ main {
 footer {
     width: 100%;
     height: fit-content;
-    border: 1px solid black;
+    border: 1px solid var(--text);
     padding: 1rem;
     margin-top: 1.2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     a {
         text-decoration: none;
     }
+
     svg {
         width: 1.25rem;
         height: 1.25rem;
@@ -65,31 +112,10 @@ footer {
         display: flex;
         gap: .75rem;
     }
+}
 
-    #signature {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: .25rem;
-
-        padding-left: 1rem;
-        padding-bottom: .1rem;
-        border-bottom: 1px solid black;
-
-
-        &::after {
-            content: "x";
-            position: absolute;
-            left: -.25rem;
-            bottom: .1rem;
-
-            padding: 0;
-            margin: 0;
-
-            font-size: 1.5rem;
-            color: #D5202C;
-        }
-    }
+.mb-auto {
+    margin-block: auto;
 }
 
 #blueprint {
@@ -101,7 +127,7 @@ footer {
     height: 96vh;
     height: 96dvh;
 
-    border: 2px solid black;
+    border: 2px solid var(--text);
 }
 
 #scalers {
@@ -115,11 +141,19 @@ footer {
     gap: .5rem;
 
     &>span {
-        background-color: black;
+        border-radius: .25rem;
+        background-color: var(--text);
         width: .5rem;
         height: .5rem;
-        &:nth-child(even) {
-            opacity: .5;
+
+        &:first-child {
+            background-color: rgb(var(--color-yellow));
+        }
+        &:nth-child(2) {
+            background-color: rgb(var(--color-red));
+        }
+        &:last-child {
+            background-color: rgb(var(--color-blue));
         }
     }
 }
@@ -128,8 +162,9 @@ footer {
     width: 100%;
     padding: .5rem 1rem;
 
-    border: 1px solid black;
+    border: 1px solid var(--text);
     white-space: nowrap;
+    text-align: center;
     & :is(h1, p) {
         margin: 0;
     }
@@ -141,11 +176,48 @@ footer {
     flex-direction: column;
 
     width: 100%;
-    padding: 1rem 1.75rem;
-    padding-top: 2rem;
+    padding: .5rem .75rem;
+    padding-top: 2.5rem;
 
-    gap: .5rem;
-    border: 1px solid black;
+    gap: 1.5rem;
+    border: 1px solid var(--text);
+
+    &>.legend-section {
+        position: relative;
+        border: 1px solid var(--text);
+        padding: .75rem;
+        padding-top: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        &>span#title {
+            content: attr(data-title);
+            position: absolute;
+            width: fit-content;
+            top: -10px;
+            left: .5rem;
+            border: 1px solid var(--text);
+            background: var(--background);
+            padding: .1rem .2rem;
+
+            // &.orange {
+            //     border-color: #fb5607;
+            // }
+        }
+    }
+    
+    &::after {
+        content: "Legend";
+
+        position: absolute;
+        top: -10px;
+        left: .5rem;
+
+        padding: 1px 3px;
+
+        border: 1px solid var(--text);
+        background-color: var(--background);
+    }
 }
 
 .legend-item {
@@ -157,31 +229,45 @@ footer {
         width: 1.2rem;
         height: 1.2rem;
     }
+
+    &>a:hover {
+        text-underline-offset: 2px;
+    }
+
+    &>span {
+        &:first-child {
+            width: .75rem;
+            height: .75rem;
+            border-radius: .25rem;
+            border: 1px solid var(--text);
+        }
+    }
 }
 
-#legend::after {
-    content: "Legend";
-
-    position: absolute;
-    top: -10px;
-    left: .5rem;
-
-    padding: 1px 3px;
-
-    border: 1px solid black;
-    background-color: white;
+a {
+    color: var(--text);
+    &:hover {
+        color: rgb(var(--color-blue));
+    }
 }
 
 #content {
+    display: flex;
+    flex-direction: column;
+
     height: 96vh;
     height: 96dvh;
     padding: 1rem;
 
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: #262626 rgba(200, 200, 200, .4);
+    scrollbar-color: var(--scroll-secondary) rgba(var(--scroll-primary), .4);
     scroll-behavior: smooth;
     scroll-padding-top: 1.6rem;
+
+    & p {
+        text-indent: 2rem;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -189,13 +275,13 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(200, 200, 200, .4);
+  background-color: rgba(var(--scroll-primary), .4);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #262626;
+  background-color: var(--scroll-secondary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #262626;
+  background-color: var(--scroll-secondary);
 }
