@@ -1,9 +1,13 @@
 ---
 ---
 <script>
-    const storageKey = 'TiredFox-Theme';
+    import { Toast } from '../scripts/toast.ts';    
+
     type Theme = 'light' | 'dark';
+    
+    const storageKey = 'TiredFox-';
     let theme: Theme = 'light';
+    const themeNotify = new Toast('The color theme can be changed with <code>Alt + T</code>');
     
     export function setTheme(new_theme: Theme) {
         theme = new_theme;
@@ -13,11 +17,11 @@
     }
     
     export function saveTheme(theme: Theme) {
-        localStorage.setItem(storageKey, theme);
+        localStorage.setItem(`${storageKey}Theme`, theme);
     }
     
     export function loadTheme(): Theme {
-        return localStorage.getItem(storageKey) === 'dark' ? 'dark' : 'light';
+        return localStorage.getItem(`${storageKey}Theme`) === 'dark' ? 'dark' : 'light';
     }
     
     export function toggleTheme() {
@@ -27,40 +31,26 @@
             setTheme('light')
         }
     }
-    
-    export function toast(message: string, duration: number | undefined) {
-        const container = document.getElementById('toasts');
-        if (container) {
-            const div = document.createElement('div');
-            div.classList.add('toast');
-    
-            const deleteToast = () => {
-                div.remove();
-            };
-    
-            const close = document.createElement('button');
-            close.innerText = 'x';
-            close.onclick = () => {
-                deleteToast();
-            }
-    
-            const p = document.createElement('p');
-            p.innerHTML = message;
-    
-            div.append(close);
-            div.append(p);
-            container.append(div);
-    
-            if (duration != null) {
-                let finished = setInterval(
-                    () => {
-                        deleteToast()
-                        clearInterval(finished)
-                    },
-                    duration
-                );
-            }
+
+    function getToastedTheme() {
+        const toastedDate = new Date(Number(localStorage.getItem(`${storageKey}Toast-Theme`) || '0'));
+        console.log(Number.isNaN(toastedDate), toastedDate, new Date);
+        return Number.isNaN(toastedDate) || toastedDate <= new Date ? false : true;
+    }
+
+    function setToastedTheme(expires: number) {
+        let currDate = new Date();
+        let result = currDate.setDate(currDate.getDate() + expires);
+        localStorage.setItem(`${storageKey}Toast-Theme`, result.toString())
+    }
+
+    function toastTheme(duration?: number) {
+        // Show this toast message that will disapear in 5 seconds
+        if (themeNotify.activate(duration)) {
+            // Toast won't auto show for another 30 days
+            setToastedTheme(30)
         }
+        
     }
 
     window.onload = () => {
@@ -72,10 +62,19 @@
             }
         })
 
+        const themeHelp = document.getElementById('theme-help');
+        if (themeHelp) {
+            themeHelp.addEventListener("click", () => {
+                toastTheme()
+            })
+        }
+
         let notify = setInterval(
             () => {
-                toast('The color theme can be changed with <code>Alt + T</code>', 5000);
-                clearInterval(notify)
+                if (!getToastedTheme()) {
+                    toastTheme(5000);
+                }
+                clearInterval(notify);
             },
             1000
         );

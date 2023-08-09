@@ -211,8 +211,14 @@ footer {
         &:nth-child(2) {
             background-color: rgb(var(--color-red));
         }
-        &:last-child {
+        &:nth-child(3) {
             background-color: rgb(var(--color-blue));
+        }
+        &:last-child {
+            background-color: unset;
+            width: .5rem;
+            height: .5rem;
+            cursor: pointer;
         }
     }
 }
@@ -240,6 +246,7 @@ footer {
 
     gap: 1.5rem;
     border: 1px solid rgb(var(--text));
+
 
     &>.legend-section {
         position: relative;
@@ -404,10 +411,14 @@ a {
             border: None;
             outline: none;
             border-radius: 1rem;
+
             height: fit-content;
             width: fit-content;
+            margin: 0;
+
             pointer-events: auto; 
             cursor: pointer;
+
             background-color: rgb(var(--color-red));
             color: rgb(var(--background));
 
