@@ -1,40 +1,42 @@
 ---
-import { Icon } from 'astro-icon';
-import type { Section } from '../scripts/navigation.ts';
+import { Icon } from "astro-icon";
+import type { Link } from "../scripts/navigation.ts";
+import { selectIcon } from "../scripts/icons";
 
 type Props = {
-  sections: Array<Section>;
+  links?: Link[],
+  open?: boolean,
 };
 
-const { sections = [] } = Astro.props;
+const { links = [], open=false } = Astro.props;
 ---
 
-<aside>
-  <nav>
-    <div id="title">
-      <h1>Zachary Boehm</h1>
-      <p>Software Developer</p>
-    </div>
-    <div id="legend">
-      {
-        sections.map(({ name, links }) => {
-          return (
-            <div class="legend-section">
-              <span id="title">{name}</span>
-              {links.map((link) => {
-                return (
-                  <div class="legend-item">
-                    <Icon name={link.icon} />
-                    <a href={link.src} title={link.title || link.display}>
-                      {link.display}
-                    </a>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })
-      }
-    </div>
-  </nav>
-</aside>
+{
+  links && (
+    <aside id="navigation" class={open ? '' : 'hide'}>
+      <nav>
+        <div id="title">
+          <div>
+            <h3>Zachary Boehm</h3>
+            <p>Software Developer</p>
+          </div>
+        </div>
+        <div id="legend">
+          <span>Legend</span>
+          <div>
+            {links.map((link) => {
+              return (
+                <div class="legend-item">
+                  <Icon name={selectIcon(link.name || link.display)} />
+                  <a href={link.src} title={link.title || link.display}>
+                    {link.display}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </nav>
+    </aside>
+  )
+}

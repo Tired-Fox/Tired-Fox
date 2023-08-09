@@ -1,33 +1,52 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Navigation from "../components/Navigation.astro";
-import ThemeScript from "../components/ThemeScript.astro";
+import InitScript from "../components/InitScript.astro";
 import Footer from "../components/Footer.astro";
+import { Icon } from "astro-icon";
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import type { Section } from "../scripts/navigation";
+import type { Link } from "../scripts/navigation";
+import { selectIcon } from "../scripts/icons";
 
 type Props = {
-    links?: Section[],
+  links?: Link[];
+  description?: string;
+  title?: string;
+  open?: boolean
 };
-const { links = [] } = Astro.props;
+const { links = [], title, description, open=false } = Astro.props;
 ---
 
+<script is:inline>
+const toggleNav = () => {
+    document.getElementById("navigation")?.classList.toggle("hide");
+};
+</script>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <ThemeScript />
+    <BaseHead
+      title={title || SITE_TITLE}
+      description={description || SITE_DESCRIPTION}
+    />
+    <InitScript />
   </head>
   <body data-theme="light">
-    <div id="scalers">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span title="Show help message" id="theme-help">?</span>
+    <div id="icon-nav">
+      <div id="menu-toggle" onclick="toggleNav()" title="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div title="Show help message" id="theme-help">?</div>
+      <div id="nav">
+        <a href="/" title="Home"><Icon name={selectIcon("home")} /></a>
+        <a href="/blog/" title="Blog"><Icon name={selectIcon("blog")} /></a>
+      </div>
     </div>
     <div id="blueprint"></div>
     <main>
-      <Navigation sections={links} />
+      <Navigation links={links} open={open}/>
       <div id="content">
         <span id="top" class="hidden"></span>
         <slot />

@@ -1,0 +1,84 @@
+---
+---
+
+<script>
+  import { Toast } from "../scripts/toast.ts";
+
+  type Theme = "light" | "dark";
+
+  const storageKey = "TiredFox-";
+  let theme: Theme = "light";
+  const notify = new Toast(
+    "1. Use the icons on the left to toggle the menu, navigate, and display these messages.",
+    "2. The color theme can be changed with <code>Alt + T</code>"
+  );
+  const menuNotify = new Toast("");
+
+  export function setTheme(new_theme: Theme) {
+    theme = new_theme;
+    saveTheme(theme);
+    document.body.setAttribute("data-theme", theme);
+  }
+
+  export function saveTheme(theme: Theme) {
+    localStorage.setItem(`${storageKey}Theme`, theme);
+  }
+
+  export function loadTheme(): Theme {
+    return localStorage.getItem(`${storageKey}Theme`) === "dark"
+      ? "dark"
+      : "light";
+  }
+
+  export function toggleTheme() {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }
+
+  function getToasted() {
+    const toastedDate = new Date(
+      Number(localStorage.getItem(`${storageKey}Toasted`) || "0")
+    );
+    return Number.isNaN(toastedDate) || toastedDate <= new Date()
+      ? false
+      : true;
+  }
+
+  function setToasted(expires: number) {
+    let currDate = new Date();
+    let result = currDate.setDate(currDate.getDate() + expires);
+    localStorage.setItem(`${storageKey}Toasted`, result.toString());
+  }
+
+  function toastAll(duration?: number) {
+    // Show this toast message that will disapear in 5 seconds
+    const setCooldown = () => setToasted(30);
+    notify.activate(duration, setCooldown);
+  }
+
+  window.onload = () => {
+    setTheme(loadTheme());
+    document.addEventListener("keydown", (event) => {
+      if (event.altKey && event.key === "t") {
+        setTheme(theme === "light" ? "dark" : "light");
+      }
+    });
+
+    const themeHelp = document.getElementById("theme-help");
+    if (themeHelp) {
+      themeHelp.addEventListener("click", () => {
+        toastAll();
+      });
+    }
+
+    let notify = setInterval(() => {
+      if (!getToasted()) {
+        toastAll(5000);
+      }
+      clearInterval(notify);
+    }, 1000);
+  };
+</script>

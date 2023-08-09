@@ -4,8 +4,8 @@ export class Toast {
     
     message: string = '';
 
-    constructor (message: string) {
-        this.message = message;
+    constructor (...messages: string[]) {
+        this.message = messages.map(message => `<p>${message}</p>`).join('');
     }
 
     #delete () {
@@ -25,12 +25,12 @@ export class Toast {
         div.classList.add('toast');
 
         const close = document.createElement('button');
-        close.innerText = 'x';
+        close.innerHTML = '<span>X</span>';
         close.onclick = () => {
             this.#delete();
         }
 
-        const p = document.createElement('p');
+        const p = document.createElement('section');
         p.innerHTML = this.message;
 
         div.append(close);
@@ -67,8 +67,10 @@ export class Toast {
         return false;
     }
 
-    activate(duration?: number): Boolean {
-        return this.#toast(duration)
+    activate(duration?: number, successCallback: () => void): Boolean {
+        if (this.#toast(duration)) {
+            successCallback()
+        }
     }
 
     kill() {

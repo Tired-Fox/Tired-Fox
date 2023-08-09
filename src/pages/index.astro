@@ -1,46 +1,27 @@
 ---
 import Blueprint from "../layouts/Blueprint.astro";
 
-const navigation = [
-    {
-        name: 'Navigation',
-        links: [
-            {
-                icon: 'hand-point-up',
-                src: '#top',
-                display: 'Top'
-            },
-            {
-                icon: 'fingerprint',
-                src: '#about',
-                display: 'About'
-            },
-            {
-                icon: 'clipboard-list',
-                src: '#projects',
-                display: 'Projects'
-            },
-            {
-                icon: 'hand-point-down',
-                src: '#bottom',
-                display: 'Bottom'
-            }
-        ]
-    },
-    {
-        name: 'Pages',
-        links: [
-            {
-                icon: 'feather',
-                src: '/blog/',
-                display: 'Blog'
-            }
-        ]
-    }
+const links = [
+  {
+    src: "#top",
+    display: "Top",
+  },
+  {
+    src: "#about",
+    display: "About",
+  },
+  {
+    src: "#projects",
+    display: "Projects",
+  },
+  {
+    src: "#bottom",
+    display: "Bottom",
+  },
 ];
 ---
 
-<Blueprint links={navigation}>
+<Blueprint links={links} open>
   <h1 id="about">About</h1>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
