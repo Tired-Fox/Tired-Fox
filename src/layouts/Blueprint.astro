@@ -13,15 +13,15 @@ type Props = {
   links?: Link[];
   description?: string;
   title?: string;
-  open?: boolean
+  open?: boolean;
 };
-const { links = [], title, description, open=false } = Astro.props;
+const { links = [], title, description, open = false } = Astro.props;
 ---
 
 <script is:inline>
-  const toggleNav = () => {
-    document.getElementById('navigation')?.classList.toggle("hide");
-  };
+const toggleNav = () => {
+    document.getElementById("navigation")?.classList.toggle("hide");
+};
 </script>
 <html lang="en">
   <head>
@@ -30,6 +30,103 @@ const { links = [], title, description, open=false } = Astro.props;
       description={description || SITE_DESCRIPTION}
     />
     <InitScript />
+    <style lang="scss">
+      #blueprint {
+        position: absolute;
+        left: 1.5rem;
+        right: 0.75rem;
+        top: 0.75rem;
+        bottom: 0.75rem;
+
+        border: 2px solid rgb(var(--text));
+      }
+
+      #icon-nav {
+        position: absolute;
+        width: 1.5rem;
+        height: calc(100% - 3rem);
+        left: 0rem;
+        top: 1.4rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        & #menu-toggle {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          cursor: pointer;
+
+          & > span {
+            border-radius: 0.25rem;
+            background-color: rgb(var(--text));
+            width: 0.5rem;
+            height: 0.5rem;
+
+            &:first-child {
+              background-color: rgb(var(--color-yellow));
+            }
+            &:nth-child(2) {
+              background-color: rgb(var(--color-red));
+            }
+            &:nth-child(3) {
+              background-color: rgb(var(--color-blue));
+            }
+          }
+        }
+
+        & > #nav {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        & svg {
+          width: 0.8rem;
+          height: 0.8rem;
+        }
+
+        & > #theme-help {
+          width: fit-content;
+          height: fit-content;
+          padding: 0;
+          margin: 0;
+
+          cursor: pointer;
+
+          background-color: unset;
+          font-weight: bold;
+        }
+      }
+      #content {
+        display: flex;
+        flex-direction: column;
+
+        height: 96vh;
+        height: 96dvh;
+        width: 100%;
+        padding: 1rem;
+
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scroll-padding-top: 1.6rem;
+
+        & > p {
+          text-indent: 2rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          line-height: 2rem;
+        }
+      }
+    </style>
   </head>
   <body data-theme="light">
     <div id="icon-nav">
@@ -42,13 +139,15 @@ const { links = [], title, description, open=false } = Astro.props;
       <span id="nav">
         <a href="/" title="Home"><Icon name={selectIcon("home")} /></a>
         <a href="/blog/" title="Blog"><Icon name={selectIcon("blog")} /></a>
-        <a href="#" class="theme-toggle" title="Toggle themes"><Icon name="pen-fancy" /></a>
+        <a href="#" class="theme-toggle" title="Toggle themes"
+          ><Icon name="pen-fancy" /></a
+        >
       </span>
-      <Icon name="angles-right" id="open-menu-icon"/>
+      <Icon name="angles-right" id="open-menu-icon" />
     </div>
     <div id="blueprint"></div>
     <main>
-      <Navigation links={links} open={open}/>
+      <Navigation links={links} open={open} />
       <div id="content">
         <span id="top" class="hidden"></span>
         <slot />
