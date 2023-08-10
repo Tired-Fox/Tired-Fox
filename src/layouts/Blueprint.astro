@@ -16,6 +16,8 @@ type Props = {
   open?: boolean;
 };
 const { links = [], title, description, open = false } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <script is:inline>
@@ -32,25 +34,20 @@ const toggleNav = () => {
     <InitScript />
     <style lang="scss">
       #blueprint {
-        position: absolute;
-        left: 1.5rem;
-        right: 0.75rem;
-        top: 0.75rem;
-        bottom: 0.75rem;
-
         border: 2px solid rgb(var(--text));
       }
 
       #icon-nav {
         position: absolute;
-        width: 1.5rem;
+        width: 2.5rem;
         height: calc(100% - 3rem);
         left: 0rem;
         top: 1.4rem;
 
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
+        justify-content: space-between;
         gap: 1.5rem;
 
         & #menu-toggle {
@@ -80,12 +77,12 @@ const toggleNav = () => {
         & > #nav {
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 1.5rem;
         }
 
         & svg {
-          width: 0.8rem;
-          height: 0.8rem;
+          width: 1rem;
+          height: 1rem;
         }
 
         & > #theme-help {
@@ -93,6 +90,7 @@ const toggleNav = () => {
           height: fit-content;
           padding: 0;
           margin: 0;
+          font-size: 1.2rem;
 
           cursor: pointer;
 
@@ -104,8 +102,7 @@ const toggleNav = () => {
         display: flex;
         flex-direction: column;
 
-        height: 96vh;
-        height: 96dvh;
+        height: 100%;
         width: 100%;
         padding: 1rem;
 
@@ -126,6 +123,13 @@ const toggleNav = () => {
           line-height: 2rem;
         }
       }
+
+      @media only screen and (min-width: 700px) {
+
+        #icon-nav {
+            flex-direction: column;
+        }
+      }
     </style>
   </head>
   <body data-theme="light">
@@ -135,15 +139,14 @@ const toggleNav = () => {
         <span></span>
         <span></span>
       </div>
-      <div title="Show help message" id="theme-help">?</div>
       <span id="nav">
-        <a href="/" title="Home"><Icon name={selectIcon("home")} /></a>
-        <a href="/blog/" title="Blog"><Icon name={selectIcon("blog")} /></a>
-        <a href="#" class="theme-toggle" title="Toggle themes"
+          <a href={`${base}`} title="Home"><Icon name={selectIcon("home")} /></a>
+          <a href={`${base}blog/`} title="Blog"><Icon name={selectIcon("blog")} /></a>
+          <a href="#" class="theme-toggle" title="Toggle themes"
           ><Icon name="pen-fancy" /></a
-        >
-      </span>
-      <Icon name="angles-right" id="open-menu-icon" />
+          >
+        </span>
+        <div title="Show help message" id="theme-help">?</div>
     </div>
     <div id="blueprint"></div>
     <main>

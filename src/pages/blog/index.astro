@@ -38,7 +38,7 @@ const tagColors = ["yellow", "red", "blue", "green", "purple", "orange"];
         posts.length > 0 ? (
           posts.map((post) => (
             <li>
-              <a href={`/blog/${post.slug}/`}>
+              <a href={`${import.meta.env.BASE_URL}blog/${post.slug}/`}>
                 <strong>{post.data.title}</strong>
                 <div>
                   <FormattedDate date={post.data.pubDate} />
