@@ -18,12 +18,12 @@ body {
 }
 
 body[data-theme="dark"] {
-//   --color-orange: 255, 180, 162;
-//   --color-purple: 288, 193, 249;
-//   --color-blue: 169, 222, 249;
-//   --color-yellow: 252, 246, 189;
-//   --color-red: 255, 153, 200;
-//   --color-green: 208, 244, 222;
+  //   --color-orange: 255, 180, 162;
+  //   --color-purple: 288, 193, 249;
+  //   --color-blue: 169, 222, 249;
+  //   --color-yellow: 252, 246, 189;
+  //   --color-red: 255, 153, 200;
+  //   --color-green: 208, 244, 222;
 
   --scroll-primary: 130, 130, 130;
   --scroll-secondary: white;
@@ -57,16 +57,21 @@ h1 {
   font-size: 2rem;
 }
 
+article > h1:first-child {
+  text-align: center;
+}
+
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
   color: rgb(var(--text));
   background-color: rgb(var(--background));
 }
 
 hr {
-    border: unset;
-    border-bottom: 1px dashed rgb(var(--text))
+  border: unset;
+  border-bottom: 1px dashed rgb(var(--text));
 }
 
 nav {
@@ -90,10 +95,21 @@ nav {
 }
 
 aside {
+  position: absolute;
+  width: 80%;
   height: 100%;
-  width: 20rem;
+  border-block: 2px solid rgb(var(--text));
+  border-inline: 1px solid rgb(var(--text));
+  box-shadow: 10px 0 5px -2px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  //   top: 1px;
+  //   left: 1px;
+  //   right: 1px;
+  //   bottom: 1px;
+  background-color: rgb(var(--background));
   max-width: 20rem;
   padding: 1rem;
+  transition: 0.15s width;
 
   &.hide {
     width: 0;
@@ -101,10 +117,53 @@ aside {
   }
 }
 
+@media only screen and (min-width: 700px) {
+  #open-menu-icon {
+    display: none;
+  }
+  #toasts {
+    width: 50vw;
+    left: 25vw;
+
+    .toast {
+      width: 100%;
+    }
+
+    & button {
+      display: flex;
+    }
+  }
+  pre:has(code) {
+    width: 90%;
+  }
+  #tags {
+    margin-top: 0;
+  }
+  #pointer {
+    display: none;
+  }
+  aside {
+    position: relative;
+    box-shadow: none;
+    border-right: none;
+    height: 100%;
+    width: 20rem;
+    max-width: 20rem;
+    padding: 1rem;
+    transition: unset;
+
+    &.hide {
+      width: 0;
+      padding: 0;
+    }
+  }
+}
+
 main {
   position: absolute;
   display: flex;
   overflow-x: hidden;
+  overflow-y: hidden;
 
   left: 1.5rem;
   right: 0.75rem;
@@ -115,7 +174,7 @@ main {
 footer {
   width: 100%;
   height: fit-content;
-  border: 1px solid rgb(var(--text));
+  border: 1px dashed rgb(var(--text));
   padding: 1rem;
   margin-top: 1.2rem;
 
@@ -188,12 +247,14 @@ footer {
 
 #icon-nav {
   position: absolute;
-  left: 0.35rem;
-  top: 2vh;
-  top: 4dvh;
+  width: 1.5rem;
+  height: calc(100% - 3rem);
+  left: 0rem;
+  top: 1.4rem;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
 
   & #menu-toggle {
@@ -257,6 +318,17 @@ footer {
       margin: 0;
     }
   }
+}
+
+#pointer {
+  text-align: right;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  outline: none;
+  margin-left: auto;
+  background-color: transparent;
+  color: rgb(var(--text));
 }
 
 #legend {
@@ -388,9 +460,10 @@ a {
 
 #toasts {
   position: absolute;
-  left: 25vw;
+  z-index: 100;
+  left: 0;
   bottom: 0;
-  width: 50vw;
+  width: 100vw;
   height: 100%;
   padding: 1rem;
   pointer-events: none;
@@ -423,31 +496,31 @@ a {
 
     font-size: 0.8rem;
 
-    &>section {
-        display: flex;
-        flex-direction: column;
-        gap: .75rem;
+    & > section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
     & p {
-        padding: 0;
-        margin: 0;
+      padding: 0;
+      margin: 0;
     }
 
     & button {
       border: None;
       outline: none;
       border-radius: 1rem;
-      
+
       height: fit-content;
       width: fit-content;
       margin: 0;
-      
+
       pointer-events: auto;
       cursor: pointer;
 
       background-color: rgb(var(--color-red));
-    //   color: rgb(var(--color-red));
+      //   color: rgb(var(--color-red));
       color: rgb(var(--background));
 
       span {
@@ -465,9 +538,12 @@ a {
 pre:has(code) {
   padding: 1rem;
   border-radius: 0.25rem;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid rgb(var(--text));
+  overflow-x: auto;
 
   scrollbar-color: rgba(var(--scroll-primary), 0.4) var(--scroll-secondary);
+  width: 100%;
+  margin-inline: auto;
 
   & * {
     letter-spacing: unset;
@@ -487,6 +563,40 @@ pre:has(code) {
   }
 }
 
+blockquote {
+  background-color: rgba(0, 0, 0, 0.25);
+  margin-inline: auto;
+  width: fit-content;
+  padding: 0.1rem 1rem;
+
+  & cite {
+    margin-left: 0.5rem;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin-inline: auto;
+  thead {
+    color: white;
+    background-color: black;
+  }
+
+  tbody tr {
+    background-color: white;
+    color: black;
+    &:nth-child(even) {
+      background-color: #e3e3e3;
+      color: black;
+    }
+  }
+
+  :is(th, td) {
+    padding: 0.5rem;
+  }
+}
+
 mark {
   color: rgb(var(--text));
   position: relative;
@@ -499,5 +609,28 @@ mark {
     width: 94%;
     height: 65%;
     background-color: rgba(255, 255, 0, 0.4);
+  }
+}
+
+#tags {
+  display: flex;
+  color: rgb(var(--text));
+  width: fit-content;
+  height: fit-content;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+
+  & > span {
+    padding: 0.1em 0.25em;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    height: fit-content;
+
+    @each $color in red, green, blue, yellow, purple, orange {
+      &.#{$color} {
+        background-color: rgba(var(--color-#{$color}), 0.5);
+        border: 1px solid rgba(var(--color-#{$color}), 0.5);
+      }
+    }
   }
 }

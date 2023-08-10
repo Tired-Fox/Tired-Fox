@@ -1,5 +1,5 @@
 const ICON_MAP: Record<string, string> = {
-    blog: 'pen-fancy',
+    blog: 'book',
     home: 'house',
     heading: 'hashtag',
     top: 'hand-point-up',

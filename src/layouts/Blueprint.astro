@@ -19,9 +19,9 @@ const { links = [], title, description, open=false } = Astro.props;
 ---
 
 <script is:inline>
-const toggleNav = () => {
-    document.getElementById("navigation")?.classList.toggle("hide");
-};
+  const toggleNav = () => {
+    document.getElementById('navigation')?.classList.toggle("hide");
+  };
 </script>
 <html lang="en">
   <head>
@@ -39,10 +39,12 @@ const toggleNav = () => {
         <span></span>
       </div>
       <div title="Show help message" id="theme-help">?</div>
-      <div id="nav">
+      <span id="nav">
         <a href="/" title="Home"><Icon name={selectIcon("home")} /></a>
         <a href="/blog/" title="Blog"><Icon name={selectIcon("blog")} /></a>
-      </div>
+        <a href="#" class="theme-toggle" title="Toggle themes"><Icon name="pen-fancy" /></a>
+      </span>
+      <Icon name="angles-right" id="open-menu-icon"/>
     </div>
     <div id="blueprint"></div>
     <main>

@@ -8,7 +8,14 @@ import type { CollectionEntry } from "astro:content";
 type Props = CollectionEntry<"blog">["data"] & {
   headLinks?: MarkdownHeading[];
 };
-const { title, description, pubDate, updatedDate, headLinks } = Astro.props;
+const {
+  tags = [],
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  headLinks,
+} = Astro.props;
 
 const generateHeaderLinks = (): Link[] => {
   return [
@@ -45,14 +52,23 @@ const pages: Section = {
     },
   ],
 };
+
+const tagColors = ["yellow", "red", "blue", "green", "purple", "orange"];
 ---
 
-<Blueprint
-  links={generateHeaderLinks()}
->
+<Blueprint links={generateHeaderLinks()}>
   <article>
     <h1>{title}</h1>
-    <FormattedDate date={pubDate} />
+    <div id="head-info">
+      <FormattedDate date={pubDate} />
+      <span id="tags">
+        {
+          tags.map((tag, index) => (
+            <span class={tagColors[index % tagColors.length]}>{tag}</span>
+          ))
+        }
+      </span>
+    </div>
     {
       updatedDate && (
         <div class="last-updated-on">
@@ -63,4 +79,21 @@ const pages: Section = {
     <hr />
     <slot />
   </article>
+  <style lang="scss">
+    #head-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media only screen and (min-width: 700px) {
+      #head-info {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    time {
+      display: inline-block;
+      width: fit-content;
+    }
+  </style>
 </Blueprint>
