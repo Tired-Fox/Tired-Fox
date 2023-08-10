@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://tired-fox.github.io',
-    base: '/Tired-Fox'
+    base: '/Tired-Fox',
 	integrations: [mdx(), sitemap()],
     // markdown: {
     //     // Applied to .md and .mdx files
