@@ -6,10 +6,8 @@ Check out my projects and join me on my quest to learn as much as possible about
 
 ## 2023 Goals:
 - [ ] Finalize major releases for my python repos: `Mophidian`, `phml`, `watchserver`, `tcfg`, and `saimll`
-- [ ] Learn Linear (task management)
 - [x] Learn Neovim
 - [ ] Become proficient in Rust and Typescript
-- [ ] Stream my projects as they are being developed
 
 ## Upcoming Project Ideas:
 - Personal website with `Astro` and `Solid.js`
