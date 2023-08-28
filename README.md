@@ -10,10 +10,10 @@ Check out my projects and join me on my quest to learn as much as possible about
 - [ ] Become proficient in Rust and Typescript
 
 ## Upcoming Project Ideas:
-- Personal website with `Astro` and `Solid.js`
+- Personal website
 - Python based terminal/console input, includes key and mouse input. All platforms
-- Rust native ui application builder; [NativeUI](https://github.com/Tired-Fox/NativeUI)
-    - currentlly only supports windows and basic text elements 
+- UI library that spans vanilla html/css/js, react, solid, svelte, etc...
+- A custom programming language. This is to be a hobby language and not meant to be anything serious
 
 ## Notable Projects:
 - [**Mophidian**](https://github.com/Tired-Fox/Mophidian): A static site generator made with pure python and a new python templating language [phml](https://github.com/Tired-Fox/phml)
