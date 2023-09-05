@@ -14,6 +14,7 @@ Check out my projects and join me on my quest to learn as much as possible about
 - Python based terminal/console input, includes key and mouse input. All platforms
 - UI library that spans vanilla html/css/js, react, solid, svelte, etc...
 - A custom programming language. This is to be a hobby language and not meant to be anything serious
+- Native gui library built in rust. The goal of this is to create gui applications using native api's
 
 ## Notable Projects:
 - [**Mophidian**](https://github.com/Tired-Fox/Mophidian): A static site generator made with pure python and a new python templating language [phml](https://github.com/Tired-Fox/phml)
