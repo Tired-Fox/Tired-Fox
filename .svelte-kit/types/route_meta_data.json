@@ -1,0 +1,24 @@
+{
+	"/": [
+		"src/routes/+page.ts"
+	],
+	"/about": [],
+	"/api/content": [
+		"src/routes/api/content/+server.ts"
+	],
+	"/blog": [
+		"src/routes/blog/+page.ts"
+	],
+	"/blog/[slug]": [
+		"src/routes/blog/[slug]/+page.ts"
+	],
+	"/projects": [
+		"src/routes/projects/+page.server.ts"
+	],
+	"/rss.xml": [
+		"src/routes/rss.xml/+server.ts"
+	],
+	"/sitemap.xml": [
+		"src/routes/sitemap.xml/+server.ts"
+	]
+}

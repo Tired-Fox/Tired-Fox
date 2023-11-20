@@ -23,3 +23,4 @@ Check out my projects and join me on my quest to learn as much as possible about
 - [**tcfg**](https://github.com/Tired-Fox/tcfg): A python library focused around configuration. Has `yaml`, `toml`, and `json` built it with the ability to be extended. The library also boasts type checking and default values along with class/member syntax.
 - [**watchserver**](https://github.com/Tired-Fox/watchserver): A python library that implements a live server that watches for file changes and automatically refreshes html pages. It has features such as ignore patterns, opening the server in the browser automatically, and the ability to create custom callbacks and refresh logic for file creation, updating, and deletion.
 - [**BuildRegex**](https://github.com/Tired-Fox/BuildRegex): A regex builder inspired by javascripts [magic-regexp](https://github.com/danielroe/magic-regexp).
+
