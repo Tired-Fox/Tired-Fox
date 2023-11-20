@@ -1,26 +1,48 @@
-# Welcome!
+# create-svelte
 
-I have a passion for all aspects of programming and hold motivation to keep learning new topics. My skills are constantly evolving and I strive to learn more about all areas of programming.
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-Check out my projects and join me on my quest to learn as much as possible about programming.
+## Creating a project
 
-## 2023 Goals:
-- [ ] Finalize major releases for my python repos: `Mophidian`, `phml`, `watchserver`, `tcfg`, and `saimll`
-- [x] Learn Neovim
-- [ ] Become proficient in Rust and Typescript
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Upcoming Project Ideas:
-- Personal website
-- Python based terminal/console input, includes key and mouse input. All platforms
-- UI library that spans vanilla html/css/js, react, solid, svelte, etc...
-- A custom programming language. This is to be a hobby language and not meant to be anything serious
-- Native gui library built in rust. The goal of this is to create gui applications using native api's
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-## Notable Projects:
-- [**Mophidian**](https://github.com/Tired-Fox/Mophidian): A static site generator made with pure python and a new python templating language [phml](https://github.com/Tired-Fox/phml)
-- [**phml**](https://github.com/Tired-Fox/phml): A new python templating language inspire from Vue.js, React.js, and other modern JS frameworks.
-- [**conterm**](https://github.com/Tired-Fox/conter): A python utility library for all functionality involving terminal/console interaction. This includes, keyboard and mouse input, ansi sequence output using a custom markup language, pretty printing, user input, and more.
-- [**tcfg**](https://github.com/Tired-Fox/tcfg): A python library focused around configuration. Has `yaml`, `toml`, and `json` built it with the ability to be extended. The library also boasts type checking and default values along with class/member syntax.
-- [**watchserver**](https://github.com/Tired-Fox/watchserver): A python library that implements a live server that watches for file changes and automatically refreshes html pages. It has features such as ignore patterns, opening the server in the browser automatically, and the ability to create custom callbacks and refresh logic for file creation, updating, and deletion.
-- [**BuildRegex**](https://github.com/Tired-Fox/BuildRegex): A regex builder inspired by javascripts [magic-regexp](https://github.com/danielroe/magic-regexp).
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Library Reference
+
+- [md-to-json-converter](https://github.com/K-Sato1995/md-to-json-converter)
+- [remark](https://github.com/remarkjs/remark)
+- [rehype](https://github.com/rehypejs/rehype)
+- [feed](https://github.com/jpmonette/feed)
+- [mdsvex](https://mdsvex.pngwn.io/)
+  - MDX but for prerendered svelte with interactive svelte components
+  - [Article](https://joyofcode.xyz/sveltekit-markdown-blog)
