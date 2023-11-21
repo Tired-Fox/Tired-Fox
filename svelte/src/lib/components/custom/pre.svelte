@@ -17,7 +17,7 @@
 </script>
 
 <div class="custom-code-highlight">
-    <button type="button" on:click={copyText}>
+    <button type="button" on:click={copyText} aria-label="Copy code as text">
 		{#if !copying}
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -62,20 +62,14 @@
 
 <style>
     .custom-code-highlight {
-        position: relative;
+        @apply relative;
     }
 
     .custom-code-highlight > button {
-        position: absolute;
-        top: .5rem;
-        right: .5rem;
-        color: white;
+        @apply absolute top-2 right-2 text-zinc-600 hover:text-zinc-400;
     }
 
     .custom-code-highlight > .lang {
-        position: absolute;
-        bottom: .5rem;
-        right: .5rem;
-        color: rgba(210, 210, 210, .25);
+        @apply text-sm text-zinc-600 absolute bottom-2 right-2
     }
 </style>
