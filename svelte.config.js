@@ -7,12 +7,20 @@ import shiki from 'shiki';
 const HIGHLIGHTER = await shiki.getHighlighter({ theme: 'slack-dark' });
 const highlight = async (code, lang='text') => {
     const html = escapeSvelte(HIGHLIGHTER.codeToHtml(code, { lang }));
-    return `{@html \`${html}\`}`;
+    lang = lang === null ? 'null' : `"${lang}"`;
+    return `<Components.pre lang={${lang}}>{@html \`${html}\`}</Components.pre>`;
 }
+import * as path from 'path';
+import { fileURLToPath } from 'url';
+
+const dirname = path.resolve(fileURLToPath(import.meta.url), '../');
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
     extensions: ['.svx'],
+    layout: {
+        _: path.join(dirname, './src/routes/blog/_layout.svelte')
+    },
     highlight: {
         highlighter: highlight
     }
