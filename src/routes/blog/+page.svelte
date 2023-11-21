@@ -8,10 +8,10 @@
 </svelete:head>
 
 <section aria-label="Blog posts">
-    <ul class="posts">
+    <ul class="flex flex-col gap-4">
         {#each data.posts as post}
-        <li>
-            <a href={post.slug} class="title">{post.title}</a>
+        <li class="w-full">
+            <a href={`/blog/${post.slug}`} class="block mb-2 text-emerald-700 font-bold text-lg hover:text-emerald-300">{post.title}</a>
             <p class="date">{formatDate(post.date)}</p>
             <p class="description">{post.description}</p>
         </li>    
