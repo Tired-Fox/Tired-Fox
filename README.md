@@ -45,4 +45,5 @@ You can preview the production build with `npm run preview`.
 - [feed](https://github.com/jpmonette/feed)
 - [mdsvex](https://mdsvex.pngwn.io/)
   - MDX but for prerendered svelte with interactive svelte components
-  - [Article](https://joyofcode.xyz/sveltekit-markdown-blog)
+  - [Article](https://joyofcode.xyz/sveltekit-markdown-blog)]
+- [shiki](https://github.com/shikijs/shiki/blob/main/docs/themes.md)

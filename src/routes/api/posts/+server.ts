@@ -4,11 +4,11 @@ import type { Post } from '$lib/types';
 async function getPosts() {
     let posts: Post[] = [];
 
-    const paths = import.meta.glob('/src/posts/*.md', { eager: true });
+    const paths = import.meta.glob('/src/posts/*.svx', { eager: true });
 
     for (const path in paths) {
         const file = paths[path];
-        const slug = path.split('/').at(-1)?.replace('.md', '');
+        const slug = path.split('/').at(-1)?.replace('.svx', '');
 
         if (file && typeof file === 'object' && 'metadata' in file && slug) {
             const metadata = file.metadata as Omit<Post, 'slug'>;
