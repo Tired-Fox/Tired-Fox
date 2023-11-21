@@ -23,3 +23,9 @@ fn greet(name: &str) {
     println!("Hello {}! 👋", name);
 }
 ```
+
+```
+fn greet(name: &str) {
+    println!("Hello {}! 👋", name);
+}
+```
