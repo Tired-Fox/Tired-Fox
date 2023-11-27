@@ -5,3 +5,7 @@
 * {
     box-sizing: border-box;
 }
+
+a[aria-current] {
+    @apply underline underline-offset-2;
+}

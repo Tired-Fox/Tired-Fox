@@ -1,6 +1,6 @@
 ---
 title: First blog
-description: First blog.
+description: First blog
 date: '2023-11-22'
 categories:
   - svelte kit
