@@ -36,7 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"md-to-json-converter": "^0.0.3",
-		"shiki": "^0.14.5"
+		"shiki": "^0.14.5",
+		"vite-plugin-dynamic-import": "^1.5.0"
 	}
 }
