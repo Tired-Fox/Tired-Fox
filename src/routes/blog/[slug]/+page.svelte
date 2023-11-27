@@ -19,7 +19,7 @@
 
     <div class="flex gap-1">
         {#each data.meta.categories as category}
-            <span class="bg-rose-400/50 px-2 rounded-full text-sm">&num;{category}</span>
+            <span class="bg-rose-400/50 dark:bg-rose-400/80 px-2 rounded-full text-sm">&num;{category}</span>
         {/each}
     </div>
 

@@ -29,3 +29,21 @@ fn greet(name: &str) {
     println!("Hello {}! 👋", name);
 }
 ```
+
+```rust
+fn greet(name: &str) {
+    println!("Hello {}! 👋", name);
+}
+```
+
+```rust
+fn greet(name: &str) {
+    println!("Hello {}! 👋", name);
+}
+```
+
+```rust
+fn greet(name: &str) {
+    println!("Hello {}! 👋", name);
+}
+```

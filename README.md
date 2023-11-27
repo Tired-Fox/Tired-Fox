@@ -47,3 +47,5 @@ You can preview the production build with `npm run preview`.
   - MDX but for prerendered svelte with interactive svelte components
   - [Article](https://joyofcode.xyz/sveltekit-markdown-blog)]
 - [shiki](https://github.com/shikijs/shiki/blob/main/docs/themes.md)
+- [vite-plugin-dynamic-import](https://www.npmjs.com/package/vite-plugin-dynamic-import)
+  - Allows for variable dynamic import with Vite.
