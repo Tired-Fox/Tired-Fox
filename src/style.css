@@ -1,11 +1,22 @@
+.app {
+    background-image: radial-gradient(rgb(212 212 216 / 0.65), 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .app {
+        background-image: radial-gradient(rgb(63 63 70 / 0.55), 1px, transparent 0);
+    }
+}
+
 .prose pre {
-    @apply rounded-md p-4 shadow-sm shadow-zinc-800 my-2 overflow-auto;
+    @apply p-4 overflow-auto;
 }
 
 * {
     box-sizing: border-box;
 }
 
-a[aria-current] {
-    @apply underline underline-offset-2;
+a {
+    @apply block w-fit;
 }

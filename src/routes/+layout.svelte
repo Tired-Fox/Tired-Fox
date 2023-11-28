@@ -1,33 +1,91 @@
-<script>
-	import "../app.pcss";
-    import "../style.css";
+<script lang="ts">
+	import '../app.pcss';
+	import '../style.css';
 
-    import { page } from '$app/stores';
+	import { page } from '$app/stores';
+	import JamMenu from 'virtual:icons/jam/menu';
+	import JamClose from 'virtual:icons/jam/close';
+	import JamGithub from 'virtual:icons/jam/github';
+    import Footer from './footer.svelte';
 
-    $: route = $page.url.pathname;
+	$: route = $page.url.pathname;
+
+	let drawer: HTMLDivElement | undefined;
+	$: showDrawer = false;
+
+	function toggleDrawer() {
+		showDrawer = !showDrawer;
+	}
+	function hideDrawer() {
+		if (showDrawer) {
+			showDrawer = false;
+		}
+	}
 </script>
 
-<div class="app bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100">
-    <header class="flex justify-between px-4 py-2">
-        <div></div>
-        <nav>
-            <ul class="flex gap-3">
-                <li><a href="/" aria-current={route === '/' ? 'page': undefined}>Home</a></li>
-                <li><a href="/blog" aria-current={route === '/blog' ? 'page': undefined}>Blog</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="app bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 min-h-screen flex flex-col">
+	<header on:input={(key) => console.log(key)} class="sticky top-0 w-full">
+		<div class="w-full max-w-[64rem] mx-auto p-2 flex justify-between">
+			<div></div>
+			<button
+				type="button"
+				class="z-30 w-8 h-8 flex items-center justify-center"
+				on:click={toggleDrawer}
+				title="Toggle menu"
+			>
+				<JamClose width="100%" height="100%" class={!showDrawer ? 'hidden' : ''} />
+				<JamMenu width="100%" height="100%" class={showDrawer ? 'hidden' : ''} />
+			</button>
+			<div
+				bind:this={drawer}
+				inert={showDrawer ? undefined : true}
+				data-show={showDrawer ? '' : undefined}
+				id="drawer"
+				class="absolute top-0 left-0 z-20 h-screen w-full px-4 pt-4 overflow-y-auto transition-transform duration-300 -translate-y-full data-[show]:translate-y-0 bg-zinc-100 dark:bg-zinc-800 rounded-b-md shadow-md"
+				aria-labelledby=""
+			>
+				<div class="max-w-[64rem] mx-auto h-full flex flex-col">
+					<a href="/" on:click={toggleDrawer} class="block w-fit">
+						<h3 class="text-2xl font-bold flex flex-col w-fit">
+							<span class="w-fit">Zachary</span>
+							<span class="ml-8 w-fit">Boehm</span>
+						</h3>
+					</a>
+					<nav class="flex-1 flex flex-col justify-center items-center">
+						<ul class="flex flex-col gap-6">
+							<li>
+								<a
+									class="aria-[current]:underline w-fit"
+									href="/blog"
+									on:click={toggleDrawer}
+									aria-current={route === '/blog' ? 'page' : undefined}
+								>
+									Blog
+								</a>
+							</li>
+                            <li>
+                                <a
+									class="aria-[current]:underline w-fit"
+									href="/about"
+									on:click={toggleDrawer}
+									aria-current={route === '/about' ? 'page' : undefined}
+								>
+									About
+								</a>
+                            </li>
+						</ul>
+					</nav>
+                    <Footer />
+				</div>
+			</div>
+		</div>
+	</header>
 
-	<main class="pb-[5rem]">
-		<slot></slot>
+	<main class="flex-1 flex flex-col">
+		<slot />
 	</main>
-
-	<footer class="text-zinc-300 dark:text-zinc-600 px-4 py-2 flex justify-between bg-inherit w-full">
-        <small aria-label="Copyright">&copy; 2023 Zachary Boehm. All Rights Reserved</small>
-        <ul>
-            <li><a href="/blog">Blog</a></li>
-        </ul>
-	</footer>
+    
+    <Footer />
 </div>
 
 <style>
@@ -47,4 +105,20 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
+
+	button > svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	#drawer {
+		background-size: 30px 30px;
+		background-image: linear-gradient(to right, rgb(63 63 70 / 0.25) 1px, transparent 1px),
+			linear-gradient(to bottom, rgb(63 63 70 / 0.25) 1px, transparent 1px);
+		background-position: -15px -18px;
+	}
+
+    #drawer nav a {
+        @apply text-4xl aria-[current]:underline w-fit;
+    }
 </style>
