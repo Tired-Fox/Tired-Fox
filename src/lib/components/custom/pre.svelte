@@ -15,7 +15,7 @@
     }
 </script>
 
-<div class="my-2 rounded-md overflow-hidden shadow-sm shadow-zinc-800">
+<div class="my-2 rounded-md overflow-hidden shadow-sm shadow-black/30">
 	<span bind:this={pre}><slot /></span>
     <div class="bg-[var(--shiki-color-background)] px-4 pb-2 flex items-center justify-between">
         <span></span>

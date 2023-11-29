@@ -2,8 +2,6 @@ import { baseUrl } from '$lib/config';
 import type { Post } from '$lib/types.js';
 import { error } from '@sveltejs/kit';
 
-export const prerender = true;
-
 const render = (pages: string[], posts: Post[]) => `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

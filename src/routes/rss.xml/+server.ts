@@ -2,8 +2,6 @@ import { baseUrl } from '$lib/config';
 import type { Post } from '$lib/types.js';
 import { error } from '@sveltejs/kit';
 
-export const prerender = true;
-
 const render = (posts: Post[]) => `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>

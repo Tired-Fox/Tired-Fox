@@ -5,15 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@iconify-json/jam':
-    specifier: ^1.1.7
-    version: 1.1.7
-  '@iconify-json/logos':
-    specifier: ^1.1.40
-    version: 1.1.40
-  '@iconify-json/mdi':
-    specifier: ^1.1.57
-    version: 1.1.57
   shiki:
     specifier: ^0.14.5
     version: 0.14.5
@@ -28,6 +19,15 @@ devDependencies:
   '@fontsource/fira-mono':
     specifier: ^4.5.10
     version: 4.5.10
+  '@iconify-json/jam':
+    specifier: ^1.1.7
+    version: 1.1.7
+  '@iconify-json/logos':
+    specifier: ^1.1.40
+    version: 1.1.40
+  '@iconify-json/mdi':
+    specifier: ^1.1.57
+    version: 1.1.57
   '@neoconfetti/svelte':
     specifier: ^1.0.0
     version: 1.0.0
@@ -391,23 +391,22 @@ packages:
     resolution: {integrity: sha512-l1+gzK5oQWazXKE5HbsMxb0Q4PMOiKUwnjaITzu7fNX6UA6yqo03PBHSSqISMNL4RgD6+gdmAa2O2BgpL4TD2g==}
     dependencies:
       '@iconify/types': 2.0.0
-    dev: false
+    dev: true
 
   /@iconify-json/logos@1.1.40:
     resolution: {integrity: sha512-F8XapUfZHp9Q53aFvhwFrwmM1NIXOtDV9G0WxIONSu3diiieObmiJQy5oNxla4LgPccyYYHyJQCo0Diys3sIUA==}
     dependencies:
       '@iconify/types': 2.0.0
-    dev: false
+    dev: true
 
   /@iconify-json/mdi@1.1.57:
     resolution: {integrity: sha512-QRaAnn9QONjkkgv4XsTXCX3J8sjs1Xu/uv/WavBc44wdD6/eBy2v10JvCtRnkNVIiRKzbi1PYxRUe1PRaB1uTg==}
     dependencies:
       '@iconify/types': 2.0.0
-    dev: false
+    dev: true
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: false
 
   /@iconify/utils@2.1.12:
     resolution: {integrity: sha512-7vf3Uk6H7TKX4QMs2gbg5KR1X9J0NJzKSRNWhMZ+PWN92l0t6Q3tj2ZxLDG07rC3ppWBtTtA4FPmkQphuEmdsg==}

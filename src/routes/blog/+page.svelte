@@ -8,10 +8,10 @@
 </svelete:head>
 
 <section aria-label="Blog posts">
-	<ul class="flex flex-col gap-4">
+	<ul class="flex flex-wrap gap-4 justify-between">
 		{#each data.posts as post}
 			<li
-				class="w-full border border-dashed hover:border-solid border-zinc-800/50 dark:border-zinc-100/50 py-2 px-4 bg-zinc-800 shadow-sm shadow-zinc-900"
+				class="border border-solid border-zinc-800/50 dark:border-zinc-100/50 py-2 px-4 bg-zinc-800 shadow-sm shadow-black/30 rounded-md w-[48%] first:w-full"
 			>
 				<a href={`/blog/${post.slug}`} class="block w-full">
 					<div class="flex justify-between mb-2">
