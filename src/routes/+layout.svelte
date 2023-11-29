@@ -1,11 +1,9 @@
 <script lang="ts">
 	import '../app.pcss';
 	import '../style.css';
+    import '../highlight.css';
 
 	import { page } from '$app/stores';
-	import JamMenu from 'virtual:icons/jam/menu';
-	import JamClose from 'virtual:icons/jam/close';
-	import JamGithub from 'virtual:icons/jam/github';
     import Footer from './footer.svelte';
 
 	$: route = $page.url.pathname;
@@ -16,16 +14,11 @@
 	function toggleDrawer() {
 		showDrawer = !showDrawer;
 	}
-	function hideDrawer() {
-		if (showDrawer) {
-			showDrawer = false;
-		}
-	}
 </script>
 
 <div class="app bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 min-h-screen flex flex-col">
 	<header on:input={(key) => console.log(key)} class="sticky top-0 w-full">
-		<div class="w-full max-w-[64rem] mx-auto p-2 flex justify-between">
+		<div class="w-full max-w-[64rem] mx-auto p-4 flex justify-between">
 			<div></div>
 			<button
 				type="button"
@@ -33,8 +26,11 @@
 				on:click={toggleDrawer}
 				title="Toggle menu"
 			>
-				<JamClose width="100%" height="100%" class={!showDrawer ? 'hidden' : ''} />
-				<JamMenu width="100%" height="100%" class={showDrawer ? 'hidden' : ''} />
+                <div id="menu-icon" data-open={showDrawer}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 			</button>
 			<div
 				bind:this={drawer}
@@ -120,5 +116,32 @@
 
     #drawer nav a {
         @apply text-4xl aria-[current]:underline w-fit;
+    }
+
+    #menu-icon > span {
+        @apply bg-zinc-800 dark:bg-zinc-100;
+        display: block;
+        height: .15rem;
+        width: 1.5rem;
+        margin-block: .3rem;
+        transition: transform .2s;
+    }
+    #menu-icon > span:nth-child(odd) {
+        width: .75rem;
+    }
+    #menu-icon > span:last-child {
+        margin-left: .75rem;
+    }
+    #menu-icon[data-open=true] > span {
+        margin-block: 0;
+    }
+    #menu-icon[data-open=true] > span:nth-child(1) {
+        transform: translate(.1rem, -.1rem) rotate(45deg);
+    }
+    #menu-icon[data-open=true] > span:nth-child(3) {
+        transform: translate(-.1rem, .1rem) rotate(45deg);
+    }
+    #menu-icon[data-open=true] > span:nth-child(2) {
+        transform: rotate(-45deg);
     }
 </style>
