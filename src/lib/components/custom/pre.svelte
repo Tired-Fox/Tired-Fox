@@ -1,13 +1,12 @@
-<script lang="ts">
-    import { fade } from "svelte/transition";
+<script>
+    /** @type {String} */
+    export let lang;
 
-    export let lang: String;
-
-    let pre: HTMLSpanElement | undefined;
+    /** @type {HTMLSpanElement | undefined} */
+    let pre;
     let copying = false;
     
     function copyText() {
-        console.log(pre?.innerText);
         if (pre && pre.innerText && !copying) {
             copying = true;
             window.navigator.clipboard.writeText(pre.innerText);
@@ -17,9 +16,11 @@
 </script>
 
 <div class="my-2 rounded-md overflow-hidden shadow-sm shadow-zinc-800">
-    <div class="bg-[#222222] px-4 py-2 flex items-center justify-between">
-        <span class="text-sm text-zinc-600">{lang ?? ''}</span>
-        <button type="button" on:click={copyText} aria-label="Copy code as text" class="text-zinc-400">
+	<span bind:this={pre}><slot /></span>
+    <div class="bg-[var(--shiki-color-background)] px-4 pb-2 flex items-center justify-between">
+        <span></span>
+        <span class="text-sm text-[rgba(var(--shiki-color-text),0.25)]">{lang}</span>
+        <button type="button" on:click={copyText} aria-label="Copy code as text" class="text-[rgba(var(--shiki-color-text),0.25)] hover:text-[rgb(var(--shiki-color-text))]">
             <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -50,5 +51,4 @@
                 </svg>
         </button>
     </div>
-	<span bind:this={pre}><slot /></span>
 </div>

@@ -6,7 +6,7 @@
 	import { baseUrl } from '$lib/config';
 </script>
 
-<footer class="text-zinc-400 dark:text-zinc-500 px-4 py-2 flex justify-between w-full max-w-[64rem] mx-auto mb-4">
+<footer class="flex justify-between w-full max-w-[64rem] px-4 py-2 mx-auto my-4 text-zinc-400 dark:text-zinc-500">
     <div></div>
     <small aria-label="Copyright">&copy; 2023 Zachary Boehm. All Rights Reserved</small>
     <ul class="flex gap-3">

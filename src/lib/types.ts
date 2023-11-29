@@ -3,7 +3,8 @@ export type Post = {
     title: string
     slug: string
     description: string
-    date: string
+    published: string,
+    updated: string,
     categories: Categories[]
-    published: boolean
+    draft: boolean
 };
