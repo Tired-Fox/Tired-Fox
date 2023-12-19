@@ -1,0 +1,22 @@
+.columned {
+    --webkit-columns: 1;
+    --moz-columns: 1;
+    columns: 1;
+    column-gap: 3rem;
+}
+@media only screen and (min-width: 786px) {
+    .columned {
+        --webkit-colulmns: 2;
+        --moz-columns: 2;
+        columns: 2;
+    }
+}
+
+article .prose p:first-child {
+    hyphens: auto;
+}
+
+article .prose p:first-of-type::first-letter {
+    initial-letter: 2;
+    padding-right: .5em;
+}
