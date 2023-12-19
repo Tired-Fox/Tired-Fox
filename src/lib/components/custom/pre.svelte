@@ -15,9 +15,8 @@
     }
 </script>
 
-<div class="my-2 rounded-md overflow-hidden shadow-sm shadow-black/30">
-	<span bind:this={pre}><slot /></span>
-    <div class="bg-[var(--shiki-color-background)] px-4 pb-2 flex items-center justify-between">
+<div class="my-2 rounded-md overflow-hidden shadow-sm shadow-black/30 not-prose">
+    <div class="bg-[var(--shiki-color-background)] px-4 pt-2 flex items-center justify-between">
         <span></span>
         <span class="text-sm text-[rgba(var(--shiki-color-text),0.25)]">{lang}</span>
         <button type="button" on:click={copyText} aria-label="Copy code as text" class="text-[rgba(var(--shiki-color-text),0.25)] hover:text-[rgb(var(--shiki-color-text))]">
@@ -51,4 +50,5 @@
                 </svg>
         </button>
     </div>
+	<span bind:this={pre}><slot /></span>
 </div>

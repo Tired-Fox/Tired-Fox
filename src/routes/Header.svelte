@@ -91,7 +91,10 @@
         @apply text-4xl aria-[current]:underline w-fit;
     }
 
-    #menu-icon > span {
+    #menu-icon {
+        @apply bg-zinc-100/50 dark:bg-zinc-800/90 p-2 rounded-full;
+    }
+    #menu-icon span {
         @apply bg-zinc-800 dark:bg-zinc-100;
         display: block;
         height: .15rem;
