@@ -1,0 +1,16 @@
+---
+title: Test Post
+hero: https://fastly.picsum.photos/id/468/1920/850.jpg?hmac=ByYYwAbEygBa0_Mp2r1Fy2hT4dr__nQ9mdHLAlr4FE0
+description: Second post
+preview: 'Mauris molestie odio ac sem porttitor lobortis ac et neque. Nunc maximus metus id cursus bibendum. Cras a condimentum felis, ac gravida odio. Nunc quis nisi dolor. Integer molestie, velit sit amet commodo sagittis, arcu leo consequat nisi, sed interdum magna metus eget justo. Duis nisl enim, posuere ac pellentesque sed, facilisis eu velit.'
+published: '2023-4-16'
+categories:
+  - svelte kit
+  - svelte
+---
+
+## Svelte
+
+Media inside the **static** folder is served from `/`.
+
+![Svelte](/favicon.png)

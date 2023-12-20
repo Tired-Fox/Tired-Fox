@@ -12,6 +12,14 @@
     }
 }
 
+.columned p:first-of-type::first-letter {
+    initial-letter: 2;
+    padding-right: .5em;
+}
+.columned p {
+    hyphens: auto;
+}
+
 article .prose p:first-child {
     hyphens: auto;
 }
@@ -19,4 +27,9 @@ article .prose p:first-child {
 article .prose p:first-of-type::first-letter {
     initial-letter: 2;
     padding-right: .5em;
+}
+
+
+.article + .article {
+    @apply mt-8 border-t dark:border-zinc-300/70 border-zinc-800/70 pt-8;
 }
