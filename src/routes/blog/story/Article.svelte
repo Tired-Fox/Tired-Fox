@@ -6,7 +6,7 @@
     export let featured: Boolean;
 </script>
 
-<li class={`article ${featured?'featured':''}`}>
+<li id={post.slug.replace('/','_')} class={`article ${featured?'featured':''}`}>
     <a href={`/blog/${post.slug}`} class="grid gap-4" aria-label={`Go to article named ${post.title}`}>
         <h3 class="title text-2xl font-bold mb-3">{post.title}</h3>
         <div class="image w-full h-full overflow-hidden rounded-md shadow-sm shadow-black">  

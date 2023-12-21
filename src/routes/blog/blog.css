@@ -1,3 +1,7 @@
+* {
+    scroll-margin: 2rem;
+}
+
 .columned {
     --webkit-columns: 1;
     --moz-columns: 1;

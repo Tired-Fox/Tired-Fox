@@ -15,7 +15,7 @@
 </svelte:head>
 
 <article>
-	<h1 class="text-3xl font-bold mb-4">{data.meta.title}</h1>
+	<h1 class="text-4xl font-bold mb-4">{data.meta.title}</h1>
 
 	<div class="flex justify-between items-center text-zinc-800/70 dark:text-zinc-300/70 border-y border-current py-1 px-2">
         <div class="flex gap-1">
