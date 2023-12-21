@@ -43,7 +43,7 @@
                     <ul class="flex flex-col gap-6">
                         <li>
                             <a
-                                class="aria-[current]:underline w-fit hover:text-sky-500"
+                                class="aria-[current]:underline w-fit hover:text-rose-500"
                                 href="/blog"
                                 on:click={toggleDrawer}
                                 aria-current={route === '/blog' ? 'page' : undefined}
@@ -59,16 +59,6 @@
                                 aria-current={route === '/projects' ? 'page' : undefined}
                             >
                                 Projects
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                class="aria-[current]:underline w-fit hover:text-rose-500"
-                                href="/about"
-                                on:click={toggleDrawer}
-                                aria-current={route === '/about' ? 'page' : undefined}
-                            >
-                                About
                             </a>
                         </li>
                     </ul>
@@ -92,7 +82,7 @@
     }
 
     #menu-icon {
-        @apply bg-zinc-100/50 dark:bg-zinc-800/90 p-2 rounded-full;
+        @apply bg-zinc-100 dark:bg-zinc-800 p-2 rounded-full;
     }
     #menu-icon span {
         @apply bg-zinc-800 dark:bg-zinc-100;
