@@ -29,7 +29,6 @@ article .prose p:first-of-type::first-letter {
     padding-right: .5em;
 }
 
-
 .article + .article {
-    @apply mt-8 border-t dark:border-zinc-300/70 border-zinc-800/70 pt-8;
+    @apply mt-8;
 }
