@@ -5,6 +5,7 @@
 
 	import JamGithub from 'virtual:icons/jam/github';
 	import JamRssFeed from 'virtual:icons/jam/rss-feed';
+	import JamEnvelope from 'virtual:icons/jam/envelope-f';
 
 	import { page } from '$app/stores';
 	import { baseUrl } from '$lib/config';
@@ -14,7 +15,7 @@
 	<!-- <Header /> -->
 
 	<main class="flex-1 grid gap-8">
-		<aside>
+		<aside class="h-0">
 			<div class="md:fixed md:h-screen top-0 left-6 xl:left-12 w-full md:w-0 flex md:flex-col items-center md:py-[4rem] gap-6">
                 <span class="flex-1 h-[2px] md:w-[2px] md:h-auto text-transparent bg-zinc-800/50 dark:bg-zinc-300/50 rounded-full"
                 >-</span>
@@ -63,6 +64,16 @@
 								/>
 							</a>
 						</li>
+                        <li>
+							<a
+								href="mailto:zboehm104@gmail.com"
+								title="Contact Me"
+							>
+								<JamEnvelope
+									class="text-zinc-800/50 hover:text-zinc-800 dark:text-zinc-300/50 dark:hover:text-zinc-300 scale-75"
+								/>
+							</a>
+						</li>
 					</ul>
 					<small class="md:-rotate-90 flex gap-1 text-zinc-800/50 dark:text-zinc-300/50"
 						>[<span>&copy;2023</span>]</small
@@ -91,6 +102,7 @@
 	main {
 		flex: 1;
 		grid-template-columns: auto;
+        grid-template-rows: 0 auto;
 		padding-block: 1rem;
 		padding-inline: 2rem;
 		width: 100%;
@@ -101,6 +113,7 @@
 	@media (min-width: 786px) {
 		main {
 			grid-template-columns: fit-content(40%) auto;
+        grid-template-rows: auto;
 		}
 	}
 </style>
