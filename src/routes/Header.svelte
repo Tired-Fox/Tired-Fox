@@ -1,19 +1,27 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-    import Footer from './Footer.svelte';
+	import Footer from './Footer.svelte';
 
 	$: route = $page.url.pathname;
-    $: showDrawer = false;
+	$: showDrawer = false;
 
-    function toggleDrawer() {
-        showDrawer = !showDrawer;
-    }
+	function toggleDrawer() {
+		showDrawer = !showDrawer;
+	}
 </script>
 
-<header on:input={(key) => console.log(key)} class="sticky top-0 w-full">
-    <div class="w-full max-w-[64rem] mx-auto p-4 flex justify-between">
-        <div></div>
-        <button
+<header class="w-full">
+	<div class="w-full max-w-[64rem] mx-auto p-4 flex justify-between items-center">
+		<div>
+			<a href="/" class="block w-fit">
+				<h3 class="text-2xl font-bold flex flex-col w-fit">
+					<span class="w-fit">Zachary</span>
+					<span class="ml-8 w-fit">Boehm</span>
+				</h3>
+			</a>
+		</div>
+		<div></div>
+		<!-- <button
             type="button"
             class="z-30 w-8 h-8 flex items-center justify-center"
             on:click={toggleDrawer}
@@ -24,8 +32,8 @@
                 <span></span>
                 <span></span>
             </div>
-        </button>
-        <div
+        </button> -->
+		<!-- <div
             inert={showDrawer ? undefined : true}
             data-show={showDrawer ? '' : undefined}
             id="drawer"
@@ -65,8 +73,8 @@
                 </nav>
                 <Footer />
             </div>
-        </div>
-    </div>
+        </div> -->
+	</div>
 </header>
 
 <style>
@@ -77,37 +85,37 @@
 		background-position: -15px -18px;
 	}
 
-    #drawer nav a {
-        @apply text-4xl aria-[current]:underline w-fit;
-    }
+	#drawer nav a {
+		@apply w-fit text-4xl aria-[current]:underline;
+	}
 
-    #menu-icon {
-        @apply bg-zinc-100 dark:bg-zinc-800 p-2 rounded-full;
-    }
-    #menu-icon span {
-        @apply bg-zinc-800 dark:bg-zinc-100;
-        display: block;
-        height: .15rem;
-        width: 1.5rem;
-        margin-block: .3rem;
-        transition: transform .2s;
-    }
-    #menu-icon > span:nth-child(odd) {
-        width: .75rem;
-    }
-    #menu-icon > span:last-child {
-        margin-left: .75rem;
-    }
-    #menu-icon[data-open=true] > span {
-        margin-block: 0;
-    }
-    #menu-icon[data-open=true] > span:nth-child(1) {
-        transform: translate(.1rem, -.1rem) rotate(45deg);
-    }
-    #menu-icon[data-open=true] > span:nth-child(3) {
-        transform: translate(-.1rem, .1rem) rotate(45deg);
-    }
-    #menu-icon[data-open=true] > span:nth-child(2) {
-        transform: rotate(-45deg);
-    }
+	#menu-icon {
+		@apply rounded-full bg-zinc-100 p-2 dark:bg-zinc-800;
+	}
+	#menu-icon span {
+		@apply bg-zinc-800 dark:bg-zinc-100;
+		display: block;
+		height: 0.15rem;
+		width: 1.5rem;
+		margin-block: 0.3rem;
+		transition: transform 0.2s;
+	}
+	#menu-icon > span:nth-child(odd) {
+		width: 0.75rem;
+	}
+	#menu-icon > span:last-child {
+		margin-left: 0.75rem;
+	}
+	#menu-icon[data-open='true'] > span {
+		margin-block: 0;
+	}
+	#menu-icon[data-open='true'] > span:nth-child(1) {
+		transform: translate(0.1rem, -0.1rem) rotate(45deg);
+	}
+	#menu-icon[data-open='true'] > span:nth-child(3) {
+		transform: translate(-0.1rem, 0.1rem) rotate(45deg);
+	}
+	#menu-icon[data-open='true'] > span:nth-child(2) {
+		transform: rotate(-45deg);
+	}
 </style>

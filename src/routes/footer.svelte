@@ -9,8 +9,8 @@
 <footer
 	class="flex justify-between w-full max-w-[64rem] px-4 py-2 mx-auto my-4 text-zinc-400 dark:text-zinc-500"
 >
-	<div></div>
-	<small aria-label="Copyright">&copy; 2023 Zachary Boehm. All Rights Reserved</small>
+	<small title="All Rights Reserved<">[&copy;2023]</small>
+    <div></div>
 	<ul class="flex gap-3">
 		<li>
 			<a href="https://github.com/Tired-Fox" aria-label="Github" target="_blank" title="Github ⭷">
