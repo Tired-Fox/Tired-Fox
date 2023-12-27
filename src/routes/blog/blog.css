@@ -13,6 +13,7 @@
         --webkit-colulmns: 2;
         --moz-columns: 2;
         columns: 2;
+        column-gap: 0;
     }
 }
 
