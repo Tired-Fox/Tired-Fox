@@ -17,10 +17,8 @@
 	<main class="flex-1 grid gap-8">
 		<aside class="h-0">
 			<div class="md:fixed md:h-screen top-0 left-6 xl:left-12 w-full md:w-0 flex md:flex-col items-center md:py-[4rem] gap-6">
-                <span class="flex-1 h-[2px] md:w-[2px] md:h-auto text-transparent bg-zinc-800/50 dark:bg-zinc-300/50 rounded-full"
-                >-</span>
 				<div class="flex md:flex-col items-center">
-					<div class="flex md:flex-col justify-between items-center gap-4 md:gap-8">
+					<div class="flex flex-row-reverse md:flex-col justify-between items-center gap-4 md:gap-8">
 						<a
 							href={`${base}/blog`}
 							class="text-zinc-800/50 hover:text-zinc-800 dark:text-zinc-300/50 dark:hover:text-zinc-300 md:-rotate-90"
@@ -76,7 +74,7 @@
 						</li>
 					</ul>
 					<small class="md:-rotate-90 flex gap-1 text-zinc-800/50 dark:text-zinc-300/50"
-						>[<span>&copy;2023</span>]</small
+						>[<a href={`${base}/credits`} class="text-sky-500/50">&copy;2023</a>]</small
 					>
 				</div>
 			</div>
