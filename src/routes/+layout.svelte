@@ -18,7 +18,7 @@
 		<aside class="h-0">
 			<div class="md:fixed md:h-screen top-0 left-6 xl:left-12 w-full md:w-0 flex md:flex-col items-center md:py-[4rem] gap-6">
 				<div class="flex md:flex-col items-center">
-					<div class="flex md:flex-col justify-between items-center gap-4 md:gap-8">
+					<div class="flex flex-row-reverse md:flex-col justify-between items-center gap-4 md:gap-8">
 						<a
 							href={`${base}/blog`}
 							class="text-zinc-800/50 hover:text-zinc-800 dark:text-zinc-300/50 dark:hover:text-zinc-300 md:-rotate-90"

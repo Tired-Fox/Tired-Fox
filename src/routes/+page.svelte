@@ -8,21 +8,21 @@
 
 <div class="border-l border-solid border-zinc-800/50 dark:border-zinc-300/50 w-full">
 	<div class="flex justify-end">
-		<div class="grid grid-cols-[repeat(2,auto)] gap-x-4 w-fit h-fit fixed top-12 mb-8">
-			<p class=" text-end">Zachary Boehm</p>
+		<div class="grid grid-cols-[repeat(2,auto)] gap-x-4 w-fit h-fit lg:fixed top-12 mb-8">
+			<p class="text-end">Zachary Boehm</p>
 			<span
 				class="border-x border-solid dark:border-zinc-300/50 border-zinc-800/50 pl-2 pr-4 text-start text-teal-500"
 			>
 				Name
 			</span>
-			<p class=" text-end">Software Developer</p>
+			<p class="text-end">Software Developer</p>
 			<span
 				class="border-x border-solid dark:border-zinc-300/50 border-zinc-800/50 pl-2 pr-4 text-start text-teal-500"
 			>
 				Job
 			</span>
 
-			<p class=" text-end">Game Design</p>
+			<p class="text-end">Game Design</p>
 			<span
 				class="border-x border-solid dark:border-zinc-300/50 border-zinc-800/50 pl-2 pr-4 text-start text-teal-500"
 			>
