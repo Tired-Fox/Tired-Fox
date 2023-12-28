@@ -19,6 +19,6 @@ type LayoutParentData = EnsureDefined<import('../$types.js').LayoutData>;
 export type PageServerData = null;
 export type PageLoad<OutputData extends OutputDataShape<PageParentData> = OutputDataShape<PageParentData>> = Kit.Load<RouteParams, PageServerData, PageParentData, OutputData, RouteId>;
 export type PageLoadEvent = Parameters<PageLoad>[0];
-export type PageData = Expand<Omit<PageParentData, keyof Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../../src/routes/blog/+page.js').load>>>> & OptionalUnion<EnsureDefined<Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../../src/routes/blog/+page.js').load>>>>>>;
+export type PageData = Expand<Omit<PageParentData, keyof Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../../node_modules/.pnpm/@sveltejs+kit@1.30.3_svelte@5.0.0-next.27_vite@4.5.1/node_modules/@sveltejs/kit/src/routes/blog/+page.js').load>>>> & OptionalUnion<EnsureDefined<Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../../node_modules/.pnpm/@sveltejs+kit@1.30.3_svelte@5.0.0-next.27_vite@4.5.1/node_modules/@sveltejs/kit/src/routes/blog/+page.js').load>>>>>>;
 export type LayoutServerData = null;
 export type LayoutData = Expand<LayoutParentData>;
