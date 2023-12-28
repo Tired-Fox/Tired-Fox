@@ -76,7 +76,7 @@
 						</li>
 					</ul>
 					<small class="md:-rotate-90 flex gap-1 text-zinc-800/50 dark:text-zinc-300/50"
-						>[<span>&copy;2023</span>]</small
+						>[<a href={`${base}/credits`} class="text-sky-500/50">&copy;2023</a>]</small
 					>
 				</div>
 			</div>
