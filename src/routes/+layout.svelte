@@ -17,8 +17,6 @@
 	<main class="flex-1 grid gap-8">
 		<aside class="h-0">
 			<div class="md:fixed md:h-screen top-0 left-6 xl:left-12 w-full md:w-0 flex md:flex-col items-center md:py-[4rem] gap-6">
-                <span class="flex-1 h-[2px] md:w-[2px] md:h-auto text-transparent bg-zinc-800/50 dark:bg-zinc-300/50 rounded-full"
-                >-</span>
 				<div class="flex md:flex-col items-center">
 					<div class="flex md:flex-col justify-between items-center gap-4 md:gap-8">
 						<a
