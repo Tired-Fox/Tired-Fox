@@ -39,7 +39,7 @@ const config = {
 		adapter: adapter(),
         csrf: false,
         paths: {
-            base: process.env.NODE_ENV === 'development' ? '' : '/tired-fox'
+            base: process.env.NODE_ENV === 'development' ? '' : ''
         }
 	}
 };
