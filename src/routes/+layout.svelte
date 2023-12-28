@@ -8,7 +8,7 @@
 	import JamEnvelope from 'virtual:icons/jam/envelope-f';
 
 	import { page } from '$app/stores';
-	import { baseUrl } from '$lib/config';
+	import { base } from '$app/paths';
 </script>
 
 <div class="app bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 min-h-screen">
@@ -27,7 +27,7 @@
 						>
 							Blog
 						</a>
-						{#if $page.url.pathname !== '/'}
+						{#if $page.url.pathname !== (base.length ? base : '/')}
 							<a
 								href="/"
 								class="text-zinc-800/50 hover:text-zinc-800 dark:text-zinc-300/50 dark:hover:text-zinc-300 md:-rotate-90 md:mt-2"
@@ -40,9 +40,9 @@
                 <div class="flex-1"></div>
 				<div class="flex md:flex-col gap-12 items-center md:pb-4">
 					<ul class="flex md:flex-col items-center gap-3">
-						<li class={$page.url.pathname.startsWith('/blog') ? '' : 'hidden'}>
+						<li class={$page.url.pathname.startsWith(`${base}/blog`) ? '' : 'hidden'}>
 							<a
-								href={`${baseUrl}/rss.xml`}
+								href={`${base}/rss.xml`}
 								aria-label="Blog RSS Feed"
 								target="_blank"
 								title="RSS Feed ⭷"

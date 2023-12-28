@@ -1,4 +1,4 @@
-import { baseUrl } from '$lib/config';
+import { base } from '$app/paths';
 import type { Post } from '$lib/types.js';
 import { error } from '@sveltejs/kit';
 
@@ -27,11 +27,11 @@ const render = (pages: string[], posts: Post[]) => `<?xml version="1.0" encoding
 
 	${posts
 		.map((element) => {
-			const { date, slug } = element;
+			const { published, slug } = element;
 			return `
 	<url>
-	  <loc>${baseUrl}/${slug}</loc>
-		<lastmod>${`${new Date(date).toISOString()}`}</lastmod>
+	  <loc>${base}/${slug}</loc>
+		<lastmod>${`${new Date(published).toISOString()}`}</lastmod>
 	</url>
 	`;
 		})
@@ -41,9 +41,9 @@ const render = (pages: string[], posts: Post[]) => `<?xml version="1.0" encoding
 /** @type {import('./$types').RequestHandler} */
 export async function GET({ setHeaders, fetch }) {
 	try {
-		const posts: Post[] = await (await fetch('/api/content')).json();
+		const posts: Post[] = await (await fetch(`${base}/api/content`)).json();
 
-		const pages = [''].map((element) => `${baseUrl}${element}`);
+		const pages = [].map((element) => `${base}/${element}`);
 
 		setHeaders({
 			'Cache-Control': 'max-age=0, s-max-age=600',

@@ -3,7 +3,7 @@
 	import JamRssFeed from 'virtual:icons/jam/rss-feed';
 
 	import { page } from '$app/stores';
-	import { baseUrl } from '$lib/config';
+	import { base } from '$app/paths';
 </script>
 
 <footer
@@ -17,9 +17,9 @@
 				<JamGithub class="text-violet-500" />
 			</a>
 		</li>
-		<li class={$page.url.pathname.startsWith('/blog') ? '' : 'hidden'}>
+		<li class={$page.url.pathname.startsWith(`${base}/blog`) ? '' : 'hidden'}>
             <a
-                href={`${baseUrl}/rss.xml`}
+                href={`${base}/rss.xml`}
                 aria-label="Blog RSS Feed"
                 target="_blank"
                 title="RSS Feed ⭷"
