@@ -1,25 +1,30 @@
-# Welcome!
+# Tired-Fox
 
-I have a passion for all aspects of programming and hold motivation to keep learning new topics. My skills are constantly evolving and I strive to learn more about all areas of programming.
+## TODO
 
-Check out my projects and join me on my quest to learn as much as possible about programming.
+- [ ] Change blog pagination to be multipage instead of single page
 
-## 2023 Goals:
-- [ ] Finalize major releases for my python repos: `Mophidian`, `phml`, `watchserver`, `tcfg`, and `saimll`
-- [x] Learn Neovim
-- [ ] Become proficient in Rust and Typescript
+## Library Reference
 
-## Upcoming Project Ideas:
-- Personal website
-- Python based terminal/console input, includes key and mouse input. All platforms
-- UI library that spans vanilla html/css/js, react, solid, svelte, etc...
-- A custom programming language. This is to be a hobby language and not meant to be anything serious
-- Native gui library built in rust. The goal of this is to create gui applications using native api's
+- [md-to-json-converter](https://github.com/K-Sato1995/md-to-json-converter)
+- [remark](https://github.com/remarkjs/remark)
+- [rehype](https://github.com/rehypejs/rehype)
+- [feed](https://github.com/jpmonette/feed)
+- [mdsvex](https://mdsvex.pngwn.io/)
+  - MDX but for prerendered svelte with interactive svelte components
+  - [Article](https://joyofcode.xyz/sveltekit-markdown-blog)]
+- [shiki](https://github.com/shikijs/shiki/blob/main/docs/themes.md)
+- [vite-plugin-dynamic-import](https://www.npmjs.com/package/vite-plugin-dynamic-import)
+  - Allows for variable dynamic import with Vite.
 
-## Notable Projects:
-- [**Mophidian**](https://github.com/Tired-Fox/Mophidian): A static site generator made with pure python and a new python templating language [phml](https://github.com/Tired-Fox/phml)
-- [**phml**](https://github.com/Tired-Fox/phml): A new python templating language inspire from Vue.js, React.js, and other modern JS frameworks.
-- [**conterm**](https://github.com/Tired-Fox/conter): A python utility library for all functionality involving terminal/console interaction. This includes, keyboard and mouse input, ansi sequence output using a custom markup language, pretty printing, user input, and more.
-- [**tcfg**](https://github.com/Tired-Fox/tcfg): A python library focused around configuration. Has `yaml`, `toml`, and `json` built it with the ability to be extended. The library also boasts type checking and default values along with class/member syntax.
-- [**watchserver**](https://github.com/Tired-Fox/watchserver): A python library that implements a live server that watches for file changes and automatically refreshes html pages. It has features such as ignore patterns, opening the server in the browser automatically, and the ability to create custom callbacks and refresh logic for file creation, updating, and deletion.
-- [**BuildRegex**](https://github.com/Tired-Fox/BuildRegex): A regex builder inspired by javascripts [magic-regexp](https://github.com/danielroe/magic-regexp).
+## Design References
+
+### Blog
+
+- [Old Newspaper](https://media.istockphoto.com/id/1156287788/vector/vintage-newspaper-news-articles-newsprint-magazine-old-design-brochure-newspaper-pages-paper.jpg?s=612x612&w=0&k=20&c=Vd96LYsgH3cou9a2dDH5XN-0Gek9Ilr7IKNv8MzDG-4=)
+- [Modern Simple](https://static.vecteezy.com/system/resources/previews/022/178/023/original/newspaper-layout-template-vector.jpg)
+- [Modern Popular](https://i.etsystatic.com/20097671/r/il/24ab3e/4683634372/il_fullxfull.4683634372_ft0f.jpg)
+- [NYJ Many Articles](https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/21cb83102417447.5f35c9037928e.jpg)
+- [Dribble](https://cdn.dribbble.com/users/5972624/screenshots/17201772/media/1a64adebbaab3674b68dc3104791b2d1.jpg?resize=400x300&vertical=center)
+- [Oldtimey](https://blog.newspaperclub.com/wp-content/uploads/2023/01/vintage-template.gif)
+- [Newspaper Style Codepen](https://codepen.io/silkine/pen/QWBxVX)

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app {
+    background-image: radial-gradient(rgb(212 212 216 / 0.65), 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .app {
+        background-image: radial-gradient(rgb(63 63 70 / 0.55), 1px, transparent 0);
+    }
+}
+
+.prose pre {
+    @apply p-4 overflow-auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    @apply block w-fit transition-colors duration-200;
+}
