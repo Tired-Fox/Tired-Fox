@@ -12,11 +12,10 @@
 </div>
 
 ___
-<div style="display: flex; gap: 2rem; align-items: center;justify-content: space-between">
+
 <a href="https://icons8.com/illustrations/author/XTPoH093lluQ" title="Illustration by Viktoriya Belinio" style="width: fit-content; height: fit-content">
 <img src="./assets/handy-folder-with-idea-bulb.png" alt="Folder walking with lightbulb" style="width: 8rem;" align="left"/>
 </a>
-<div style="padding-block: 1rem">
 
 ## About me
 
@@ -28,18 +27,13 @@ Hello my name is Zachary and I hope to create inspiring projects.<br/>I hope to 
 > ― Thomas Edison
 ___
 
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 2rem;">
-<div>
-
 ## Notable projects
 
 I don't have many projects to show off, yet, but I have a few work in progress projects that I'm excited for.
-</div>
 
 <a href="https://icons8.com/illustrations/author/XTPoH093lluQ" title="Illustration by Viktoriya Belinio" style="width: fit-content; height: fit-content">
-<img src="./assets/handy-browser-creates-web-design.png" alt="Folder walking with lightbulb" style="width: 10rem;" align="right"/>
+<img src="./assets/handy-browser-creates-web-design.png" alt="Browser creates web design" style="width: 10rem;" align="right"/>
 </a>
-</div>
 
 1. **Null**
     * Doesn't exist? Nope! This is a programming language that I started making from scratch to learn the low level process of how programming languages work.
@@ -54,13 +48,9 @@ I don't have many projects to show off, yet, but I have a few work in progress p
 
 ___
 
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 2rem;">
-
 <a href="https://icons8.com/illustrations/author/XTPoH093lluQ" title="Illustration by Viktoriya Belinio" style="width: fit-content; height: fit-content">
-<img src="./assets/handy-data-science.png" alt="Folder walking with lightbulb" style="width: 8rem;" align="left"/>
+<img src="./assets/handy-data-science.png" alt="Data science chart" style="width: 8rem;" align="left"/>
 </a>
-
-<div>
 
 ## Languages and Tools
 
@@ -77,8 +67,7 @@ ___
 ![Vue.js](https://custom-icon-badges.demolab.com/badge/-REST-white?style=for-the-badge&logoColor=42b883&logo=rest "rest")
 ![YAML](https://custom-icon-badges.demolab.com/badge/-YAML-white?style=for-the-badge&logoColor=pink&logo=yaml "yaml")
 ![JSON](https://custom-icon-badges.demolab.com/badge/-JSON-white?style=for-the-badge&logoColor=gold&logo=json "JSON")
-</div>
-</div>
+
 </div>
 
 ___
