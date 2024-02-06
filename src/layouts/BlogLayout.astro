@@ -1,0 +1,12 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Frontmatter = CollectionEntry<'blog'>['data'];
+interface Props extends Frontmatter {}
+
+const { title, tags, image, related } = Astro.props;
+---
+
+<article class="prose-slate dark:prose-invert">
+    <slot />
+</article>

@@ -1,0 +1,20 @@
+{
+    "extends": "astro/tsconfigs/base",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@layout/*": ["./src/layouts/*"],
+            "@component/*": ["./src/components/*"],
+            "@style/*": ["./src/styles/*"]
+        },
+        "plugins": [
+            {
+                "name": "@astrojs/ts-plugin"
+            }
+        ],
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js",
+        "verbatimModuleSyntax": true,
+        "strictNullChecks": true
+    }
+}
