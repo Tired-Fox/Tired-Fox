@@ -19,9 +19,10 @@ ___
 
 ## About me
 
-Hello my name is Zachary and I hope to create inspiring projects.<br/>I hope to create cool and fun projects that meet language and format standards. The final goal is to create to inspire others to learn and create.
+Hello my name is Zachary and I hope to create inspiring projects. I hope to create cool and fun projects that meet language and format standards. The final goal is to create to inspire others to learn and create.
 </div>
 </div>
+<br />
 
 > "Many of life's failures are people who did not realize how close they were to success when they gave up." <br/>
 > ― Thomas Edison
