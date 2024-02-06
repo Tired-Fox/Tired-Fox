@@ -19,7 +19,7 @@ ___
 
 ## About me
 
-Hello my name is Zachary and I hope to create inspiring projects.<br/>I hope to create cool and fun projects that meet language and format standards, and that inspire others to create and learn.
+Hello my name is Zachary and I hope to create inspiring projects.<br/>I hope to create cool and fun projects that meet language and format standards. The final goal is to create to inspire others to learn and create.
 </div>
 </div>
 
