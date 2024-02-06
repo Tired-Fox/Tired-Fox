@@ -14,7 +14,7 @@
 ___
 <div style="display: flex; gap: 2rem; align-items: center;justify-content: space-between">
 <a href="https://icons8.com/illustrations/author/XTPoH093lluQ" title="Illustration by Viktoriya Belinio" style="width: fit-content; height: fit-content">
-<img src="./assets/handy-folder-with-idea-bulb.png" alt="Folder walking with lightbulb" style="width: 8rem;"/>
+<img src="./assets/handy-folder-with-idea-bulb.png" alt="Folder walking with lightbulb" style="width: 8rem;" align="left"/>
 </a>
 <div style="padding-block: 1rem">
 
@@ -37,7 +37,7 @@ I don't have many projects to show off, yet, but I have a few work in progress p
 </div>
 
 <a href="https://icons8.com/illustrations/author/XTPoH093lluQ" title="Illustration by Viktoriya Belinio" style="width: fit-content; height: fit-content">
-<img src="./assets/handy-browser-creates-web-design.png" alt="Folder walking with lightbulb" style="width: 10rem;"/>
+<img src="./assets/handy-browser-creates-web-design.png" alt="Folder walking with lightbulb" style="width: 10rem;" align="right"/>
 </a>
 </div>
 
@@ -57,12 +57,12 @@ ___
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 2rem;">
 
 <a href="https://icons8.com/illustrations/author/XTPoH093lluQ" title="Illustration by Viktoriya Belinio" style="width: fit-content; height: fit-content">
-<img src="./assets/handy-data-science.png" alt="Folder walking with lightbulb" style="width: 10rem;"/>
+<img src="./assets/handy-data-science.png" alt="Folder walking with lightbulb" style="width: 8rem;" align="left"/>
 </a>
 
 <div>
 
-## Programming Languages
+## Languages and Tools
 
 <div style="display: flex; flex-wrap: wrap">
 
@@ -82,21 +82,8 @@ ___
 </div>
 
 ___
-<footer style="display: flex; justify-content: space-between; gap: 2rem; margin-top: 2rem; align-items: center">
-<div style="display: flex; flex-direction: column">
-<h2>Links</h2>
-<ul>
-    <li>
-        <p>
-            Illustrations from <a href="https://icons8.com/illustrations" target="_blank">Ouch!</a> from the  style <a href="https://icons8.com/illustrations/style--handy-line">handy line</a>
-        </p>
-    </li>
-    <li>
-        Learn more about what I do at
-        <a href="https://tired-fox.vercel.app/">my website</a>
-    </li>
-</ul>
-</div>
+<footer>
+    
 <picture>
 <source
 srcset="https://github-readme-stats.vercel.app/api?username=tired-fox&show_icons=true&theme=dracula&hide_border=true&hide_title=true&hide=commits"
@@ -106,6 +93,16 @@ media="(prefers-color-scheme: dark)"
 srcset="https://github-readme-stats.vercel.app/api?username=tired-fox&show_icons=true&hide_border=true&hide_title=true&hide=commits"
 media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
 />
-<img src="https://github-readme-stats.vercel.app/api?username=tired-fox&show_icons=true&hide_border=true&hide_title=true&hide=commits" alt="github stats"/>
+<img src="https://github-readme-stats.vercel.app/api?username=tired-fox&show_icons=true&hide_border=true&hide_title=true&hide=commits" alt="github stats" align="left" style="margin-right: 1rem"/>
 </picture>
+<div align="left">
+<h2>Links</h2>
+<p>
+    Illustrations from <a href="https://icons8.com/illustrations" target="_blank">Ouch!</a> from the  style <a href="https://icons8.com/illustrations/style--handy-line">handy line</a>.
+</p>
+<p>
+    Learn more about what I do at
+    <a href="https://tired-fox.vercel.app/">my website</a>.
+</p>
+</div>
 </footer>
