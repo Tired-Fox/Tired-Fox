@@ -7,11 +7,12 @@ import sentry from "@sentry/astro";
 import spotlight from "@spotlightjs/astro";
 
 import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
 
 const NEEDS_BASE = false;
 
 export default defineConfig({
-    integrations: [sitemap(), mdx(), sentry(), spotlight(), tailwind({ nesting: true, configFile: "./tailwind.config.js" })],
+    integrations: [sitemap(), mdx(), sentry(), spotlight(), tailwind({ nesting: true }), icon()],
     markdown: {
         gfm: true,
         remarkPlugins: [],

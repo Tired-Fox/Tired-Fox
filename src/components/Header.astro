@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+const pathname = Astro.url.pathname;
+
+interface Link {
+    href: string,
+    icon: string,
+    external?: boolean
+}
+type Links = {[x: string]: Link};
+
+const links: Links = {
+    "Home": {
+        href: "/",
+        icon: "mdi:home"
+    },
+    "Blog": {
+        href: "/blog",
+        icon: "mdi:book"
+    },
+    "Github": {
+        href: "https://github.com/Tired-Fox",
+        icon: "mdi:github",
+        external: true
+    },
+}
+---
+
+<header id="header" class="sticky top-2 border border-transparent">
+    <nav id="header-left" class="absolute left-4 sm:left-0 p-1 sm:py-8 bg-zinc-50 dark:bg-zinc-800">
+        <ul class="text-xs flex justify-center sm:flex-col items-center gap-4">
+            <li class="sm:-rotate-90 w-fit h-fit sm:mb-8">
+                [
+                <a href="/credits" class="text-sky-300 hover:text-sky-500">&copy;2024</a>
+                ]
+            </li>
+            {Object.entries(links).map(([key, {href, icon, external}]) => (
+                <li>
+                    <a href={href} target={external ? '_blank': undefined} aria-current={
+                        (!external && pathname === href) ? 'page': undefined 
+                    }>
+                        <Icon name={icon} title={key} class="w-4 h-4" />
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+</header>

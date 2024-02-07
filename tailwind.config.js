@@ -4,7 +4,15 @@ module.exports = {
     "./src/**/*.{astro,html,js,jsx,md,mdx,jdx,ts,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+        typography: {
+            DEFAULT: {
+                css: {
+                    maxWidth: '100ch',
+                }
+            }
+        }
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
