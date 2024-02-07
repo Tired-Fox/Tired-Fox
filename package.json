@@ -1,33 +1,47 @@
 {
-  "name": "astro",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@astrojs/mdx": "^2.1.1",
-    "@astrojs/sitemap": "^3.0.5",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/ts-plugin": "^1.4.0",
-    "astro": "^4.3.3",
-    "astro-icon": "^1.1.0",
-    "tailwindcss": "^3.4.1"
-  },
-  "devDependencies": {
-    "@iconify-json/mdi": "^1.1.64",
-    "@sentry/astro": "^7.100.0",
-    "@spotlightjs/astro": "^1.0.15",
-    "@tailwindcss/typography": "^0.5.10",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "typescript": "^5.3.3"
-  }
+	"name": "tired-fox",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@fontsource/fira-mono": "^4.5.10",
+		"@iconify-json/jam": "^1.1.7",
+		"@iconify-json/logos": "^1.1.40",
+		"@iconify-json/mdi": "^1.1.57",
+		"@neoconfetti/svelte": "^1.0.0",
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.27.4",
+		"@tailwindcss/typography": "^0.5.10",
+		"@types/cookie": "^0.5.1",
+		"@typescript-eslint/eslint-plugin": "^6.0.0",
+		"@typescript-eslint/parser": "^6.0.0",
+		"autoprefixer": "^10.4.14",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-svelte": "^2.30.0",
+		"mdsvex": "^0.11.0",
+		"postcss": "^8.4.24",
+		"postcss-load-config": "^4.0.1",
+		"prettier": "^3.0.0",
+		"prettier-plugin-tailwindcss": "^0.4.1",
+		"svelte": "^5.0.0-next.1",
+		"svelte-check": "^3.6.0",
+		"tailwindcss": "^3.3.2",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.4.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"shiki": "^0.14.5",
+		"unplugin-icons": "^0.17.4",
+		"vite-plugin-dynamic-import": "^1.5.0"
+	}
 }
