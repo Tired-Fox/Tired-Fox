@@ -1,12 +1,14 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import Layout from '@layout/Layout.astro';
 
-type Frontmatter = CollectionEntry<'blog'>['data'];
-interface Props extends Frontmatter {}
+type Props = CollectionEntry<'blog'>['data'];
 
 const { title, tags, image, related } = Astro.props;
 ---
 
-<article class="prose-slate dark:prose-invert">
-    <slot />
-</article>
+<Layout title={title} description="Blog post">
+    <article class="dark:prose prose-slate prose-invert">
+        <slot />
+    </article>
+</Layout>
