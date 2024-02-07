@@ -62,16 +62,6 @@
 								/>
 							</a>
 						</li>
-                        <li>
-							<a
-								href="mailto:zboehm104@gmail.com"
-								title="Contact Me"
-							>
-								<JamEnvelope
-									class="text-zinc-800/50 hover:text-zinc-800 dark:text-zinc-300/50 dark:hover:text-zinc-300 scale-75"
-								/>
-							</a>
-						</li>
 					</ul>
 					<small class="md:-rotate-90 flex gap-1 text-zinc-800/50 dark:text-zinc-300/50"
 						>[<a href={`${base}/credits`} class="text-sky-500/50">&copy;2023</a>]</small

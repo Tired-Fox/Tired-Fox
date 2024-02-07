@@ -1,8 +1,0 @@
-{
-  "Cypress": {
-    "description": "A web browser written in pure rust from scratch",
-    "longDescription": "A web browser written in pure rust. Each part of the browser is written from scratch as much as possible to serve as a learning experience. Exceptions to this includes low level APIs like graphics APIs and system APIs.",
-    "languages": ["Rust"],
-    "link": "/projects/cypress"
-  }
-}
