@@ -19,8 +19,7 @@ ___
 
 ## About me
 
-Hello my name is Zachary and I hope to create inspiring projects. I hope to create cool and fun projects that meet language and format standards. The final goal is to create to inspire others to learn and create.
-</div>
+Hello my name is Zachary and I hope to create inspiring projects that spark creativity in others
 </div>
 <br />
 
@@ -40,9 +39,9 @@ I don't have many projects to show off, yet, but I have a few work in progress p
     * Doesn't exist? Nope! This is a programming language that I started making from scratch to learn the low level process of how programming languages work.
 2. **[Story Tree](https://github.com/StoryTreeGames)**
     * This is fairly early, but I have always enjoyed created games. So in spite of everyone saying it is insane, I decided to start creating a collection of libraries to create my own game engine.
-3. **\*To Be Named\* (Game Game Website)**
+3. **\*To Be Named\* (Game Jam Website)**
     * To continue on with my love for videogames and their development, I started prototyping a website that contains a hub for game jams. The jams themselves are not hosted on this site. Instead it handles events and collecting general information into a single location.
-4. **[My Blog](https://tired-fox.vercel.app/blog)**
+4. **[My Blog](https://tired-fox.vercel.app/blog) (WIP)**
     * I haven't been a person that is always on social media, let alone someone who uses it. A goal of mine is to change this in a positive and productive way. I plan to "blog" about my thoughts and findings while creating my projects. This does two things: serve as a reference to look back on in the future, and a detailed process on how I create to inspire others.
 
 > Follow my progress and see my process on [my website](https://tired-fox.vercel.app/blog)
@@ -65,9 +64,12 @@ ___
 ![Java](https://custom-icon-badges.demolab.com/badge/-Java-white?style=for-the-badge&logoColor=red&logo=java "java")
 ![SQL](https://custom-icon-badges.demolab.com/badge/-sql-white?style=for-the-badge&logoColor=blue&logo=mysql "sql")
 ![Vue.js](https://custom-icon-badges.demolab.com/badge/-Vue-white?style=for-the-badge&logoColor=42b883&logo=vue "vue")
-![Vue.js](https://custom-icon-badges.demolab.com/badge/-REST-white?style=for-the-badge&logoColor=42b883&logo=rest "rest")
+![Rest](https://custom-icon-badges.demolab.com/badge/-REST-white?style=for-the-badge&logoColor=42b883&logo=rest "rest")
 ![YAML](https://custom-icon-badges.demolab.com/badge/-YAML-white?style=for-the-badge&logoColor=pink&logo=yaml "yaml")
 ![JSON](https://custom-icon-badges.demolab.com/badge/-JSON-white?style=for-the-badge&logoColor=gold&logo=json "JSON")
+![Go](https://custom-icon-badges.demolab.com/badge/-Go-white?style=for-the-badge&logoColor=sky&logo=go "go")
+![Zig](https://custom-icon-badges.demolab.com/badge/-Zig-white?style=for-the-badge&logoColor=sky&logo=zig "zig")
+![Lua](https://custom-icon-badges.demolab.com/badge/-Lua-white?style=for-the-badge&logoColor=blue&logo=lua "lua")
 
 </div>
 
