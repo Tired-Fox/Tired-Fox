@@ -38,13 +38,7 @@ I don't have many projects to show off, yet, but I have a few work in progress p
 1. **[Null](https://github.com/Tired-Fox/lang-null)**
     * Doesn't exist? Nope! This is a programming language that I started making from scratch to learn the low level process of how programming languages work.
 2. **[Story Tree](https://github.com/StoryTreeGames)**
-    * This is fairly early, but I have always enjoyed created games. So in spite of everyone saying it is insane, I decided to start creating a collection of libraries to create my own game engine.
-3. **\*To Be Named\* (Game Jam Website)**
-    * To continue on with my love for videogames and their development, I started prototyping a website that contains a hub for game jams. The jams themselves are not hosted on this site. Instead it handles events and collecting general information into a single location.
-4. **[My Blog](https://tired-fox.vercel.app/blog) (WIP)**
-    * I haven't been a person that is always on social media, let alone someone who uses it. A goal of mine is to change this in a positive and productive way. I plan to "blog" about my thoughts and findings while creating my projects. This does two things: serve as a reference to look back on in the future, and a detailed process on how I create to inspire others.
-
-> Follow my progress and see my process on [my website](https://tired-fox.vercel.app/blog)
+    * This is fairly early, but I have always enjoyed creating games. So in spite of everyone saying it is insane, I decided to start creating a collection of libraries to create my own game engine.
 
 ___
 
@@ -91,10 +85,6 @@ media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
 <h2>Links</h2>
 <p>
     Illustrations from <a href="https://icons8.com/illustrations" target="_blank">Ouch!</a> from the  style <a href="https://icons8.com/illustrations/style--handy-line">handy line</a>.
-</p>
-<p>
-    Learn more about what I do at
-    <a href="https://tired-fox.vercel.app/">my website</a>.
 </p>
 </div>
 </footer>
